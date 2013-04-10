@@ -1,0 +1,11 @@
+// Cool Use Case Diagram
+[Guest House]-(Register as a guest house)
+[Guest House]-(offer accommodation)
+[Guest House]-(Accept/ Reject a booking)
+[Guest House]-(Update details about it's rooms)
+[traveler] - (book accommodation)
+[traveler] - (register)
+[traveler] - (search for accommodation)
+[traveler] - (update personal details)
+[Website Admin] - (Accept/ reject new guest houses)
+[Website Admin] - (Offer client support)
