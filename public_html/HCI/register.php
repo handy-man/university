@@ -80,7 +80,7 @@ function checkEmail(theForm) {
 <input name="mypassword2" type="password" id="mypassword2" placeholder="Repeat Password" required>
 <br/>
 <p class="center">
-<button class='button' type='submit'>Register</button>
+<button class='button' type='submit' onclick="alert('This is a prototype'); return false;">Register</button>
 </form>
 </p>
 <?PHP include("./includes/footer.php");?>

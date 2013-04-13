@@ -40,7 +40,7 @@ session_destroy();
 <input name="u" type="text" id="u" required>
 <strong>Password</strong>
 <input name="p" type="password" id="p" required>
-<button class='button' type='submit'>Login</button>
+<button class='button' type='submit' onclick="alert('This is a prototype'); return false;">Login</button>
 </form>
 
 <p class="center">Have no login? Why not try and <a href="register.php">register</a>?</p>

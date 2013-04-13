@@ -14,6 +14,8 @@
 include("./includes/header.php");
 ?>
 							<div id="primary_content">
-							<p>Welcome to Handy_man's and Jonzky's Trouble in Terrorist Town Stat tracking website! This website is in Beta, feel free to check everything out and report any problems.</p>
+							<p>Suggest listing some of our locations for hotels here, with links to more information about them.</p>
+							
+							
 						</div>
 				<?PHP include("./includes/footer.php");?>

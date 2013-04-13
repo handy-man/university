@@ -247,6 +247,8 @@ text-align: right;
 .siteFooter .center
 {
 	padding-bottom: 30px;
+	font-size: 14px;
+	color:white;
 }
 
 table.stattable{
