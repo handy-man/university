@@ -13,7 +13,7 @@
 include("./includes/header.php");
 include("./includes/config.php");	
 /*Search variable go here */
-$searchInput = $_GET['s'];
+
 
 /*End of Regex*/
 ?>
