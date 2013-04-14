@@ -19,12 +19,16 @@ $searchInput = $_GET['s'];
 <div id="primary_content_about">
 <h4 class="center">You searched for : <?PHP echo $searchInput; ?></h4>
 <div class="search_img1">
-<p class="search_text">bunch of descriptive text here!</p>
+<p class="search_text"><a href="./search.php">The Bazaar Hotel</a></br><img src="./static/images/star.gif"/><img src="./static/images/star.gif"/><img src="./static/images/star.gif"/><img src="./static/images/star.gif"/></br>£100 - £150 per night <button class='button' type='submit'>Book now</button></p>
 </div>
 </br>
-<img src="./static/images/hotel_2.jpg"/>
+<div class="search_img2">
+<p class="search_text"><a href="./search.php">The Sunshine Lodge</a></br><img src="./static/images/star.gif"/><img src="./static/images/star.gif"/><img src="./static/images/star.gif"/><img src="./static/images/star.gif"/><img src="./static/images/star.gif"/></br>£150+ per night <button class='button' type='submit'>Book now</button></p>
+</div>
 </br>
-<img src="./static/images/hotel_3.jpg"/>
+<div class="search_img3">
+<p class="search_text"><a href="./search.php">The Belle Vue Guest House</a></br><img src="./static/images/star.gif"/><img src="./static/images/star.gif"/><img src="./static/images/star.gif"/></br>£50 - £100 per night <button class='button' type='submit'>Book now</button></p>
+</div>
 </br>
 
 

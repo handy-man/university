@@ -13,14 +13,14 @@
 
 include("./includes/header.php");
 ?>
-							<div id="primary_content">
+							<div id="primary_content_home">
 							<div class="home_img">
 							<p class="home_text">Book from a great selection of hotels
 							</br>
 							</br>
 							</br>
 							<form name="form1" method="get" action="search.php">
-							<input class="home_search" name="s" type="text" id="s" placeholder="City or hotel name"  required>
+							<input class="home_search" name="s" type="text" id="s" placeholder="  City or hotel name"  required>
 							<button class='button' type='submit'>Find hotels</button>
 							</form>
 							</p>
