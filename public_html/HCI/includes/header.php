@@ -55,7 +55,7 @@ require("./includes/session_start.php");
 							<a href="customers.php">Customers</a>
 						</li>
 						<li>
-						<a href="login.php">login</a>
+						<a href="login.php">Login</a>
 						</li>
 							<li>
 						<a href="cart.php">Cart</a>

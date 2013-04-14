@@ -55,6 +55,7 @@ function checkEmail(theForm) {
 }
 //-->
 </script> 
+<div id="primary_content">
 
 <form name="form1" method="post" action="checkregister.php" onsubmit="return checkEmail(this);">
 
@@ -83,4 +84,5 @@ function checkEmail(theForm) {
 <button class='button' type='submit' onclick="alert('This is a prototype'); return false;">Register</button>
 </form>
 </p>
+</div>
 <?PHP include("./includes/footer.php");?>

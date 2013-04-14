@@ -11,7 +11,6 @@
 |      by Handy_man       |
 \------------------------*/
 include("./includes/header.php");
-include("./includes/config.php");	
 /*Search variable go here */
 $searchInput = $_GET['s'];
 

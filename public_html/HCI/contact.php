@@ -11,11 +11,7 @@
 |      by Handy_man       |
 \------------------------*/
 include("./includes/header.php");
-include("./includes/config.php");	
-/*Search variable go here */
-
-
-/*End of Regex*/
+	
 ?>
 <div id="primary_content">
 <div id="form" style="margin: 0 auto; width: 350px;">
