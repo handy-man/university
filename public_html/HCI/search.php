@@ -18,8 +18,9 @@ $searchInput = $_GET['s'];
 ?>
 <div id="primary_content_about">
 <h4 class="center">You searched for : <?PHP echo $searchInput; ?></h4>
-
-<img src="./static/images/hotel_1.jpg"/><p>bunch of descriptive text here!</p>
+<div class="search_img1">
+<p class="search_text">bunch of descriptive text here!</p>
+</div>
 </br>
 <img src="./static/images/hotel_2.jpg"/>
 </br>
