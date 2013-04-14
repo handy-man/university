@@ -33,7 +33,7 @@ require("./includes/session_start.php");
 				</div>
 						<div id='search'>
 							<form name="input" action="search.php" method="get">
-							<input type="text" name="s" placeholder="Search..." value required>
+							<input type="text" name="s" placeholder="City, hotel name, etc." value required>
 							<input type="submit" value="Search">
 							</form>
 							

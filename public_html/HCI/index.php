@@ -14,7 +14,19 @@
 include("./includes/header.php");
 ?>
 							<div id="primary_content">
-							<p>Suggest listing some of our locations for hotels here, with links to more information about them.</p>
+							<div class="home_img">
+							<p class="home_text">Book from a great selection of hotels
+							</br>
+							</br>
+							</br>
+							<form name="form1" method="get" action="search.php">
+							<input class="home_search" name="s" type="text" id="s" placeholder="City or hotel name"  required>
+							<button class='button' type='submit'>Find hotels</button>
+							</form>
+							</p>
+							</div>
+							
+							
 							
 							
 						</div>

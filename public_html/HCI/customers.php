@@ -15,9 +15,9 @@ include("./includes/header.php");
 ?>
 	<div id="primary_content_about">
 
-	<h4>Customers!</h4>
+	<h4>Customers</h4>
 	
-	<p>Insert information about the hotel booking company here!</p>
+	<p>This page could include reviews/ testimonials/ feedback about our website and what the users of our website have said about us as a company.</p>
 	
 	
 	</div>

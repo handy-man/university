@@ -38,6 +38,31 @@ h2
 	line-height: 10px;
 	color: black;
 }
+.home_img{
+width: 977px;
+height: 347px;
+background-image:url('./images/beach.jpg');
+margin: auto;
+}
+
+.home_text{
+text-align: center;
+font-size: 20px;
+text-transform: bold;
+margin:0px;
+padding: 50px 0 0 0;
+color: white;
+}
+
+.home_search{
+width: 150px;
+height: 35px;
+border: 1px;
+	-moz-border-radius: 24px;
+	-webkit-border-radius: 24px;
+	border-radius: 24px;
+}
+
 .center	{
 text-align: center;
 font-size: 18px;
