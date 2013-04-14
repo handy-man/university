@@ -14,10 +14,11 @@
 include("./includes/header.php");
 ?>
 	<div id="primary_content_about">
+
+	<h4>Privacy policy</h4>
 	
-	<h4>Clients!</h4>
+		<p>Insert Privacy policy here.</p>
 	
-	<p>Insert information about some of our clients here! such as some popular/ major hotels.</p>
 	
 	</div>
 <?PHP include("./includes/footer.php");?>

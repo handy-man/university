@@ -31,7 +31,7 @@ echo "<p class ='noexist'>Incorrect username or password or account not verified
 session_destroy();
 }
 ?>
-
+<div id="primary_content">
 <form name="form1" method="post" action="checklogin.php">
 
 <p class="center">
@@ -46,4 +46,5 @@ session_destroy();
 <p class="center">Have no login? Why not try and <a href="register.php">register</a>?</p>
 <p class="centerSmall"><a href="./login-forget.php">Forgotten your login?</a>  |  <a href="./password-forget.php">Forgotten your password?</a> |  <a href="./verify.php">Resend verification?</a></p>
 </p>
+</div>
 <?PHP include("./includes/footer.php");?>
