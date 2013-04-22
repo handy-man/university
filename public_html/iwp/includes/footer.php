@@ -13,12 +13,6 @@
 ?>
 				
 				</div>
-				<div class="clearfooter"></div>
-				<div id="content_box_bottom">
-				
-				<a href="mailto:administrator@thehiddennation.com">Report a Problem</a><br/>
-				<?PHP
-				//echo $quotes;?>
-				</div>
+		
 		</body>
 </html>

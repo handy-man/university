@@ -1,25 +1,13 @@
-<?php
-/*------------------------\
-|        TTT STATS        |
-|	       Beta           |
-|=========================|
-|© 2013 SNGaming.org      |
-|	All Rights Reserved   |
-|=========================|
-| 	Website printout      |
-| 	   beta testing       |
-| 	   by Handy_man       |
-\------------------------*/				
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-include("./includes/header.php");
-?>
+</head>
+<body> 
+<canvas width="300" height="300" style="border:1px dotted;float:right" onClick="draw_box()" id="movebox"></canvas>
 
-					<div id="primary_content">
-				
-					<canvas width="1000" height="600" style="border:1px dotted;" onClick="draw_box()" id="movebox"></canvas>
-					
-					</div>
-					<script>
+<p>This has simple (but wrong) keyboard interaction using the arrow keys - click on the canvas to start.</p>
+<script>
 	  var cx;
 	  var cy;
 	  var c_canvas = document.getElementById("movebox");
@@ -38,37 +26,28 @@ include("./includes/header.php");
 
 function move_left() {
    check_pos();
-   cx = cx - 3;
+   cx--;
 }
 
 function move_up() {
    check_pos();
-   cy = cy -3;
+   cy--;
 }
 function move_right() {
  check_pos();
-  cx = cx + 3;
+  cx++;
 }
 function move_down() {
  check_pos(); 
- cy = cy + 3;
+ cy++;
 }
 
 function check_pos(){
 //Write our checking of all positions
 
 if (cx > c_canvas.width - 20){
-cx = cs - 3;
-cy = cy;
-}
-else if (cx > 0){
-cx = cx + 3;
-}
-else if(cy > c_canvas.height - 20 ){
-cy = cy - 3;
-}
-else(){
-
+cx = 20;
+cy = 20;
 }
 
 
@@ -115,7 +94,6 @@ document.onkeydown= function(event) {
       break; 
   } 
 }
-					</script>
-
-
-				<?PHP include("./includes/footer.php");?>
+</script>
+</body>
+</html>
