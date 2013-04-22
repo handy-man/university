@@ -21,8 +21,7 @@
 		<link href="static/main.css" media="screen" rel="stylesheet" type="text/css" />
 		<title>HTML5 IWP GAME</title>
 	</head>
-			<body>
-			<?PHP	include("analytics.php");	?>
+			<body onload="initGame()">
 				<div id="page">
 				
 			
@@ -30,17 +29,4 @@
 				<div id="logo">
 				<img src="./static/images/interactive-web.png"/>
 				</div>
-
-					
-					<nav>
-						<ul>
-						<li>
-						<a href="index.php">Home</a>
-						</li>
-
-						<li>
-							<a href="#">About</a>
-						</li>
-						</ul>
-					</nav>
 					
