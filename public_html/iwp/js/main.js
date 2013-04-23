@@ -1,81 +1,65 @@
 
-
-var blob_pos_x;
-	  var blob_pos_y;
-	  var move_speed;
-	  var blob_image = new Image();
-	  var rock_image = new Image();
-	  blob_image.src = './static/images/blob.png';
-	  rock_image.src = './static/images/rock.png';
-	  var c_canvas = document.getElementById("game_canvas");
-	  var c_context = c_canvas.getContext("2d");
+	var canvas, ctx;
+	var blob_pos_x;
+	var blob_pos_y;
+	var rock_y;
+	var rocks_array = {};
+	var move_speed;
+	var blob_image = new Image();
+	var rock_image = new Image();
+	blob_image.src = './static/images/blob.png';
+	rock_image.src = './static/images/rock.png';
+	var c_canvas = document.getElementById("game_canvas");
+	var c_context = c_canvas.getContext("2d");
 	
-	  
+	
 	
 	  
 	  function initGame(){
 		move_speed = 3;
 		blob_pos_x=500;
 		blob_pos_y=400;
-		draw_box();
+		game_id=setInterval(game_loop, 50);
 	  }
-	  
-	function object(){
-		this.init = function(x, y) {
-		// Defualt variables
-		this.x = x;
-		this.y = y;
+	
+	function clear(){
+	//clear our board! 
+	c_canvas.width=c_canvas.width;
+	c_canvas.height=c_canvas.height;
 	}
-	
-	this.speed = 0;
-	this.canvasWidth = 0;
-	this.canvasHeight = 0;
-	
-	// Define abstract function to be implemented in child objects
-	this.draw = function() {
-	};
+		
+	function rocks(x, y, speed){
+	this.x = x;
+	this.y = y;
+	this.speed = speed;
 	}
 	
 	
-	function rock_loop(){
-	//clear the board
-	//game_canvas.width=game_canvas.width; 
-	draw_b_box();
-	rock();
 	
-	
+	function game_loop(){
+	clear();
+	draw_blob();
+	draw_rocks();
 	
 	}
 	
-	function rock(){
-	this.speed = 3;
-	this.y = 30;
-	this.y += this.speed;
-	c_canvas.getContext("2d").drawImage(rock_image, 20, this.y);
-	}
-rock.prototype = new object();
 
 
-	
+
+		function draw_rocks(ctx, x, y){
+						c_canvas.getContext("2d").drawImage(rock_image, 50, 20);
+
+		}
 	  
 	  function draw_coin(){
 	  
 	  
 	  }
-	  
-	  function draw_box() {
-		 
-		  draw_b_box();
-		  rock();
-		  setInterval(draw_b_box,110);
-		  setInterval(rock,110);
-	  }
-	  function draw_b_box() {
-		  c_canvas.width=c_canvas.width;
-		  c_canvas.height=c_canvas.height;
-		  c_canvas.width_start=0;
-		  c_canvas.height_start=0;
+	 
+	  function draw_blob() {
 		    c_canvas.getContext("2d").drawImage(blob_image, blob_pos_x, blob_pos_y);
+				//c_canvas.getContext("2d").drawImage(rock_image, 50, rock_y);
+
 	  }
 
 function move_left() {
