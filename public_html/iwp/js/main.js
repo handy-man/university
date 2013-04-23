@@ -4,7 +4,9 @@ var blob_pos_x;
 	  var blob_pos_y;
 	  var move_speed;
 	  var blob_image = new Image();
+	  var rock_image = new Image();
 	  blob_image.src = './static/images/blob.png';
+	  rock_image.src = './static/images/rock.png';
 	  var c_canvas = document.getElementById("game_canvas");
 	  var c_context = c_canvas.getContext("2d");
 	
@@ -16,15 +18,57 @@ var blob_pos_x;
 		blob_pos_x=500;
 		blob_pos_y=400;
 		draw_box();
-	  
 	  }
 	  
+	function object(){
+		this.init = function(x, y) {
+		// Defualt variables
+		this.x = x;
+		this.y = y;
+	}
+	
+	this.speed = 0;
+	this.canvasWidth = 0;
+	this.canvasHeight = 0;
+	
+	// Define abstract function to be implemented in child objects
+	this.draw = function() {
+	};
+	}
+	
+	
+	function rock_loop(){
+	//clear the board
+	//game_canvas.width=game_canvas.width; 
+	draw_b_box();
+	rock();
+	
+	
+	
+	}
+	
+	function rock(){
+	this.speed = 3;
+	this.y = 30;
+	this.y += this.speed;
+	c_canvas.getContext("2d").drawImage(rock_image, 20, this.y);
+	}
+rock.prototype = new object();
+
+
+	
 	  
+	  function draw_coin(){
+	  
+	  
+	  }
 	  
 	  function draw_box() {
 		 
 		  draw_b_box();
+		  rock();
 		  setInterval(draw_b_box,110);
+		  setInterval(rock,110);
 	  }
 	  function draw_b_box() {
 		  c_canvas.width=c_canvas.width;
