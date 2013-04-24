@@ -158,13 +158,20 @@
 	for (var i=0; i<rocks_array.length; i++) {
 	if (blob_pos_x < rocks_array[i].x + 18  && blob_pos_x + 22  > rocks_array[i].x &&
     blob_pos_y < rocks_array[i].y + 32 && blob_pos_y + 23 > rocks_array[i].y) {
-	//remove our rock and remove a life.
-	//rocks_array.splice(rocks, i); //removes a random rock?
-	
-	rocks_array[i].y = 500;
+	//remove our rock and remove a life.	
+	rocks_array[i].y = 500; //move our rock to the end of the canvas thus moving it to the top a moment later but we've randomized our x,y,speed.
 	
 	}
 	}
+	//end of rock collision
+	for (var i=0; i<coins_array.length; i++) {
+	if (blob_pos_x < coins_array[i].x + 32  && blob_pos_x + 22  > coins_array[i].x &&
+    blob_pos_y < coins_array[i].y + 32 && blob_pos_y + 23 > coins_array[i].y) {
+	//increase our score and remove the coin? or move it? what do?	
+	alert('coin hit');
+	}
+	}
+	
 	}
 	
 	
