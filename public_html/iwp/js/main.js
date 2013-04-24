@@ -4,8 +4,8 @@
 	var blob_pos_y;
 	var alreadyStarted = 0;
 	var level_num;
-	var rocks_array = [];
-	var coins_array = [];
+	var rocks_array;
+	var coins_array;
 	var move_speed;
 	var blob_image = new Image();
 	var rock_image = new Image();
@@ -85,15 +85,17 @@
 	
 	function level_start(){
 		move_speed = 3;
-		blob_pos_x=500;
-		blob_pos_y=400;
+		rocks_array = [];
+		coins_array = [];
+
+		
 	var width = canvas.width;
 	var width_coin = canvas.width - 64; //so we don't run off the edge of our canvas
     var height = canvas.height;
     var height_coin = canvas.height - 64; //so we don't run off the edge of our canvas
 	level_num = level_num + 1;
-    var rockCount = level_num* 2; // Number of rocks is double the number of coins
-    var coinCount = level_num; // Number of coins
+    var rockCount = level_num; // Number of rocks is double the number of coins
+    var coinCount = 1; // Number of coins
 
     for (var i=0; i<rockCount; i++) {
 
@@ -169,23 +171,12 @@
     blob_pos_y < coins_array[i].y + 32 && blob_pos_y + 23 > coins_array[i].y) {
 	//increase our score and add a new rock?	
 	
-	var width_coin = canvas.width - 64; //so we don't run off the edge of our canvas
-    var height_coin = canvas.height - 64; //so we don't run off the edge of our canvas
-	var x = Math.random()*width_coin;
-    var y = Math.random()*height_coin;
-		coins_array[i].x = x;
-		coins_array[i].y = y;
+		level_start();
 	}
 	}
 	
 	}
-	
-	
-	function collect(){
-	//Has my blob collided/ collected a coin?
-	
-	
-	}
+
 
 
 		function draw_rocks(ctx, x, y){
