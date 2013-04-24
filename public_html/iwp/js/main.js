@@ -149,10 +149,30 @@
 	draw_blob();
 	draw_rocks();
 	draw_coins();
+	colide();
 	
 	}
 	
-
+	function colide(){
+	//Has my blob collided with any rocks? 18 = rock width 22 = blob width 32 = rock height 23 = blob height
+	for (var i=0; i<rocks_array.length; i++) {
+	if (blob_pos_x < rocks_array[i].x + 18  && blob_pos_x + 22  > rocks_array[i].x &&
+    blob_pos_y < rocks_array[i].y + 32 && blob_pos_y + 23 > rocks_array[i].y) {
+	//remove our rock and remove a life.
+	//rocks_array.splice(rocks, i); //removes a random rock?
+	
+	rocks_array[i].y = 500;
+	
+	}
+	}
+	}
+	
+	
+	function collect(){
+	//Has my blob collided/ collected a coin?
+	
+	
+	}
 
 
 		function draw_rocks(ctx, x, y){
