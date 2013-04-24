@@ -4,6 +4,8 @@
 	var blob_pos_y;
 	var alreadyStarted = 0;
 	var level_num;
+	var lives;
+	var score;
 	var rocks_array;
 	var coins_array;
 	var move_speed;
@@ -46,9 +48,19 @@
     
 	}
 	
+	function restartGameVars(){
+		move_speed = 3;
+		lives = 3;
+		score = 0;
+		blob_pos_x=500;
+		blob_pos_y=400;
+		level_num = 1;
+	}
 	  
 	function initGame(){
-			move_speed = 3;
+		move_speed = 3;
+		lives = 3;
+		score = 0;
 		blob_pos_x=500;
 		blob_pos_y=400;
 		level_num = 1;
@@ -76,9 +88,12 @@
 		game_id=setInterval(game_loop, 50); 
 		alreadyStarted = 1;
 	}
-	else if(alreadyStarted == 2){
-	//We don't need to do anything if we click again? maybe think about restart options with switch statement.
-	//restart the game?
+	
+	if (alreadyStarted == 2){
+		restartGameVars();
+		level_start();
+		game_id=setInterval(game_loop, 50); 
+		alreadyStarted = 1;
 	}
 	
 	}
@@ -123,7 +138,8 @@
 	c_canvas.width=c_canvas.width;
 	c_canvas.height=c_canvas.height;
 	}
-		
+	
+	//where our mouse goes our blob goes
 	function mouseupdates(e) {
 	var bounding_box=c_canvas.getBoundingClientRect();
         blob_pos_x=(e.clientX-bounding_box.left) *
@@ -132,12 +148,14 @@
 				(c_canvas.height/bounding_box.height);	
 }	
 		
+	//define our rocks object
 	function rocks(x, y, speed){
 	this.x = x;
 	this.y = y;
 	this.speed = speed;
 	}
 	
+	//define our coins object (the same as the rocks tbf, but that could change?
 	function coins(x, y, speed){
 	this.x = x;
 	this.y = y;
@@ -145,16 +163,17 @@
 	}
 	
 	
-	
+	//Our game loop that will run every 50ms 
 	function game_loop(){
 	clear();
 	draw_blob();
 	draw_rocks();
 	draw_coins();
 	colide();
-	
+	draw_info();
 	}
 	
+	//Game collision, all collision is dealt out here!
 	function colide(){
 	//Has my blob collided with any rocks? 18 = rock width 22 = blob width 32 = rock height 23 = blob height
 	for (var i=0; i<rocks_array.length; i++) {
@@ -162,7 +181,10 @@
     blob_pos_y < rocks_array[i].y + 32 && blob_pos_y + 23 > rocks_array[i].y) {
 	//remove our rock and remove a life.	
 	rocks_array[i].y = 500; //move our rock to the end of the canvas thus moving it to the top a moment later but we've randomized our x,y,speed.
-	
+	lives = lives - 1;
+	if (lives == 0){
+	end_level();
+	}
 	}
 	}
 	//end of rock collision
@@ -170,16 +192,44 @@
 	if (blob_pos_x < coins_array[i].x + 32  && blob_pos_x + 22  > coins_array[i].x &&
     blob_pos_y < coins_array[i].y + 32 && blob_pos_y + 23 > coins_array[i].y) {
 	//increase our score and add a new rock?	
-	
+		score = score + 100;
 		level_start();
 	}
 	}
 	
 	}
+	
+	//We've died/ have 0 lives left, lets show that information and allow us to start the game again.
+	function end_level(){
+	
+	clearInterval(game_id);
+	clear();
+	ctx.font = "25px Verdana";
+	ctx.strokeStyle = "#ff0000";
+	ctx.strokeText("Coin collecter!", 500,100);
+	ctx.strokeText("You loose! You scored:", 100,200);
+	ctx.strokeText("Click to play again.", 450,300);
+	score = 0;
+	alreadyStarted = 2;
+	
+	}
 
+	//Draw our constant information (lives and score for the moment), maybe level?
+	function draw_info(){
+	
+	ctx.font = "12px Verdana";
+	ctx.strokeStyle = "#ff0000";
+	ctx.strokeText("Lives: ", 10,490);
+	ctx.strokeText(lives, 50,490);
+	ctx.strokeText("Score: ", 70,490);
+	ctx.strokeText(score, 110,490);
+	
+	
+	}
 
-
-		function draw_rocks(ctx, x, y){
+	
+	//Draw our rocks from our array, and reset them if they're off the screen.
+	function draw_rocks(ctx, x, y){
 			  for (var i=0; i<rocks_array.length; i++) {
 
         c_canvas.getContext("2d").drawImage(rock_image, rocks_array[i].x, rocks_array[i].y);
@@ -195,16 +245,17 @@
 				rocks_array[i].speed = Math.floor(Math.random() * 6) + 1
 			}
 		}
-		}
+	}
 	  
-	  function draw_coins(){
+	//Draw our coin from our array ad
+	function draw_coins(){
 	  		  for (var i=0; i<coins_array.length; i++) {
 
         c_canvas.getContext("2d").drawImage(coin_image, coins_array[i].x, coins_array[i].y);
 
 		}
 	  
-	  }
+	}
 	 
 	  function draw_blob() {
 		    c_canvas.getContext("2d").drawImage(blob_image, blob_pos_x, blob_pos_y);
