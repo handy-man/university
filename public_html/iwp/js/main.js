@@ -2,7 +2,7 @@
 	var canvas, ctx;
 	var blob_pos_x;
 	var blob_pos_y;
-	var alreadyStarted = false;
+	var alreadyStarted = 0;
 	var level_num;
 	var rocks_array = [];
 	var coins_array = [];
@@ -71,14 +71,16 @@
 	  
 	function initGameStart(){
 	
-	if (alreadyStarted == false){
+	if (alreadyStarted == 0){
 		level_start();
-		alreadyStarted = true;
+		game_id=setInterval(game_loop, 50); 
+		alreadyStarted = 1;
 	}
-	else{
+	else if(alreadyStarted == 2){
 	//We don't need to do anything if we click again? maybe think about restart options with switch statement.
+	//restart the game?
 	}
-	game_id=setInterval(game_loop, 50); 
+	
 	}
 	
 	function level_start(){
