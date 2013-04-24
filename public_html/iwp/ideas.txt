@@ -1,0 +1,11 @@
+stuff to implement:
+
+Pass levels based on number of rocks that go past the screen/ get reset.
+
+Different types of spawning items? so rather than just coins lives?
+
+life system
+
+collision detection
+
+level system (based on number of rocks? or coin collection? 
