@@ -62,6 +62,7 @@
 	ctx.strokeText("Collect as many coins as possible without getting hit by the rocks!", 100,200);
 	ctx.strokeText("Click to start!", 450,300);
 	canvas.addEventListener("click", initGameStart, false);
+	canvas.addEventListener("mousemove",mouseupdates,false);
 	ctx.textAlign = "center";
 	
 	
@@ -75,7 +76,7 @@
 		alreadyStarted = true;
 	}
 	else{
-	alert('The game has already started');
+	//We don't need to do anything if we click again? maybe think about restart options with switch statement.
 	}
 	game_id=setInterval(game_loop, 50); 
 	}
@@ -118,6 +119,14 @@
 	c_canvas.width=c_canvas.width;
 	c_canvas.height=c_canvas.height;
 	}
+		
+	function mouseupdates(e) {
+	var bounding_box=c_canvas.getBoundingClientRect();
+        blob_pos_x=(e.clientX-bounding_box.left) *
+                             (c_canvas.width/bounding_box.width);	
+        blob_pos_y=(e.clientY-bounding_box.top) *
+				(c_canvas.height/bounding_box.height);	
+}	
 		
 	function rocks(x, y, speed){
 	this.x = x;
