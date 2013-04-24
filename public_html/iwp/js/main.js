@@ -167,8 +167,14 @@
 	for (var i=0; i<coins_array.length; i++) {
 	if (blob_pos_x < coins_array[i].x + 32  && blob_pos_x + 22  > coins_array[i].x &&
     blob_pos_y < coins_array[i].y + 32 && blob_pos_y + 23 > coins_array[i].y) {
-	//increase our score and remove the coin? or move it? what do?	
-	alert('coin hit');
+	//increase our score and add a new rock?	
+	
+	var width_coin = canvas.width - 64; //so we don't run off the edge of our canvas
+    var height_coin = canvas.height - 64; //so we don't run off the edge of our canvas
+	var x = Math.random()*width_coin;
+    var y = Math.random()*height_coin;
+		coins_array[i].x = x;
+		coins_array[i].y = y;
 	}
 	}
 	
