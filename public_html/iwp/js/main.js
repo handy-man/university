@@ -2,25 +2,116 @@
 	var canvas, ctx;
 	var blob_pos_x;
 	var blob_pos_y;
-	var rock_y;
-	var rocks_array = {};
+	var alreadyStarted = false;
+	var level_num;
+	var rocks_array = [];
+	var coins_array = [];
 	var move_speed;
 	var blob_image = new Image();
 	var rock_image = new Image();
+	var coin_image = new Image();
 	blob_image.src = './static/images/blob.png';
 	rock_image.src = './static/images/rock.png';
+	coin_image.src = './static/images/coin.png';
 	var c_canvas = document.getElementById("game_canvas");
 	var c_context = c_canvas.getContext("2d");
 	
+	function initbgmusic(){
+	bg = document.getElementById('bg'); 
+    bg.loop =  true; 
+    bg.currentTime = 0; 
+    bg.play(); 
+	}
 	
+	function playBgMusic(){
+	bg = document.getElementById('bg'); 
+    bg.currentTime = 0; 
+    bg.play(); 
+	}
+	
+	function musicHandler(){
+	bg = document.getElementById('bg'); 
+	if (bg.currentTime != 0){
+	pauseBgMusic();
+	}
+	else{
+	playBgMusic();
+	}
+	}
+	
+	function pauseBgMusic(){
+		bg = document.getElementById('bg'); 
+		bg.pause();
+		bg.currentTime = 0; 
+    
+	}
 	
 	  
-	  function initGame(){
+	function initGame(){
+			move_speed = 3;
+		blob_pos_x=500;
+		blob_pos_y=400;
+		level_num = 1;
+	initbgmusic()
+	canvas = document.getElementById('game_canvas');
+    ctx = canvas.getContext('2d');
+	var width_half = canvas.width/2 - 100;
+	ctx.font = "25px Verdana";
+	ctx.strokeStyle = "#ff0000";
+	ctx.strokeText("Coin collecter!", width_half,100);
+	ctx.strokeText("Collect as many coins as possible without getting hit by the rocks!", 100,200);
+	ctx.strokeText("Click to start!", 450,300);
+	canvas.addEventListener("click", initGameStart, false);
+	ctx.textAlign = "center";
+	
+	
+		//game_id=setInterval(game_loop, 50); //start the game loop, which will start the level and shit.
+	  }
+	  
+	function initGameStart(){
+	
+	if (alreadyStarted == false){
+		level_start();
+		alreadyStarted = true;
+	}
+	else{
+	alert('The game has already started');
+	}
+	game_id=setInterval(game_loop, 50); 
+	}
+	
+	function level_start(){
 		move_speed = 3;
 		blob_pos_x=500;
 		blob_pos_y=400;
-		game_id=setInterval(game_loop, 50);
-	  }
+	var width = canvas.width;
+	var width_coin = canvas.width - 64; //so we don't run off the edge of our canvas
+    var height = canvas.height;
+    var height_coin = canvas.height - 64; //so we don't run off the edge of our canvas
+	level_num = level_num + 1;
+    var rockCount = level_num* 2; // Number of rocks is double the number of coins
+    var coinCount = level_num; // Number of coins
+
+    for (var i=0; i<rockCount; i++) {
+
+        var x = Math.random()*width;
+
+        var y = Math.random()*height;
+
+        rocks_array.push(new rocks(x,0,Math.floor(Math.random() * 6) + 1));
+
+    }
+	
+	for (var i=0; i<coinCount; i++) {
+
+        var x = Math.random()*width_coin;
+
+        var y = Math.random()*height_coin;
+
+        coins_array.push(new coins(x,y,3));
+
+    }
+	}
 	
 	function clear(){
 	//clear our board! 
@@ -34,12 +125,19 @@
 	this.speed = speed;
 	}
 	
+	function coins(x, y, speed){
+	this.x = x;
+	this.y = y;
+	this.speed = speed;
+	}
+	
 	
 	
 	function game_loop(){
 	clear();
 	draw_blob();
 	draw_rocks();
+	draw_coins();
 	
 	}
 	
@@ -47,12 +145,29 @@
 
 
 		function draw_rocks(ctx, x, y){
-						c_canvas.getContext("2d").drawImage(rock_image, 50, 20);
+			  for (var i=0; i<rocks_array.length; i++) {
 
+        c_canvas.getContext("2d").drawImage(rock_image, rocks_array[i].x, rocks_array[i].y);
+		rocks_array[i].y = rocks_array[i].y+ rocks_array[i].speed;
+		
+			//reset rocks to top of screen change their x and speed.
+			if (rocks_array[i].y > c_canvas.height - 20){
+				rocks_array[i].y = 0;
+				rocks_array[i].x = Math.random()*c_canvas.width;
+				//rocks_array[i].speed = rocks_array[i].speed + Math.floor(Math.random() * 6) + 1 //hardcore mode? rocks go faster every time they reset.
+				
+				//change rock speed
+				rocks_array[i].speed = Math.floor(Math.random() * 6) + 1
+			}
+		}
 		}
 	  
-	  function draw_coin(){
-	  
+	  function draw_coins(){
+	  		  for (var i=0; i<coins_array.length; i++) {
+
+        c_canvas.getContext("2d").drawImage(coin_image, coins_array[i].x, coins_array[i].y);
+
+		}
 	  
 	  }
 	 
