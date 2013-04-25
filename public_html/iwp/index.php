@@ -22,13 +22,17 @@ include("./includes/header.php");
 					
 					<script src="./js/main.js"></script>
 					<audio id="bg" loop>
-					<source src="./sound/bg.mp3" type="audio/mpeg">
+					<source src="./sound/bg1.mp3" type="audio/mpeg">
 					</audio>
 					<audio id="levelup">
 					<source src="./sound/levelup.wav" type="audio/mpeg">
 					</audio>
-					<audio id="loosegame">
-					<source src="./sound/bg.mp3" type="audio/mpeg">
+					<audio id="damage">
+					<source src="./sound/damage.wav" type="audio/mpeg">
+					</audio>
+					
+					<audio id="endgame">
+					<source src="./sound/endgame.wav" type="audio/mpeg">
 					</audio>
 
 				<?PHP include("./includes/footer.php");?>
