@@ -6,6 +6,7 @@
 	var level_num;
 	var lives;
 	var score;
+	var playing;
 	var rocks_array;
 	var coins_array;
 	var move_speed;
@@ -21,20 +22,20 @@
 	function initbgmusic(){
 	bg = document.getElementById('bg'); 
     bg.loop =  true; 
+	playing = 1;
     //bg.currentTime = 0; 
     bg.play(); 
 	}
 	
 	function playBgMusic(){
 	bg = document.getElementById('bg'); 
-    bg.currentTime = 0; 
+	playing = 1;
 	bg.volume = 0.5;
     bg.play(); 
 	}
 	
 	function musicHandler(){
-	bg = document.getElementById('bg'); 
-	if (bg.currentTime != 0){
+	if (playing == 1){
 	pauseBgMusic();
 	}
 	else{
@@ -45,7 +46,7 @@
 	function pauseBgMusic(){
 		bg = document.getElementById('bg'); 
 		bg.pause();
-		bg.currentTime = 0; 
+		playing = 0;
     
 	}
 	
@@ -231,15 +232,6 @@
     blob_pos_y < coins_array[i].y + 32 && blob_pos_y + 23 > coins_array[i].y) {
 	//increase our score and add a new rock?	
 		score = score + 100;
-		
-		if(typeof(Storage)!=="undefined")
-		{
-			if (score > localStorage.score){
-			localStorage.score = score;
-			}
-
-		
-		}
 		levelup.volume = 0.5;
 		levelup.play();
 		add_rock();
@@ -251,6 +243,7 @@
 	
 	//We've died/ have 0 lives left, lets show that information and allow us to start the game again.
 	function end_level(){
+	check_achievements();
 	pauseBgMusic();
 	clearInterval(game_id);
 	clear();
@@ -263,19 +256,133 @@
 	ctx.strokeText("Coin collector!", 500,100);
 	ctx.strokeText("You lose! You scored:", 500,200);
 	ctx.strokeText(score, 500,250);
+	
 	ctx.strokeText("Click to play again.", 500,300);
 	if(typeof(Storage)!=="undefined")
 		{
+		if (localStorage.score){
+		if (score > localStorage.score){
+			localStorage.score = score;
+		}
+		}
+		else{
+		localStorage.score = 0;
+		}
+		if (localStorage.prevScore){
+		//do nothing this time around, still too early to update, we just didn't want undefined!
+		}
+		else{
+		localStorage.prevScore = 0;
+		}
 	ctx.strokeText("Highest score: " + localStorage.score + " Previous Score: " + localStorage.prevScore + "", 500,400);
 	if (localStorage.prevScore){
 		localStorage.prevScore = score;
-	}
+		}
 	}
 	score = 0;
 	alreadyStarted = 2;
 	
 	}
-
+	
+	function achievements_view(){
+	
+	clear();
+	ctx.textAlign = "center";
+	ctx.font = "25px Verdana";
+	ctx.strokeStyle = "#ff0000";
+	if (localStorage.over1000){
+	ctx.strokeText("Achieve over 1000 score - " + localStorage.over1000 + "", 500,20);
+	}
+	else{
+	ctx.strokeText("Achieve over 1000 score - Locked", 500,20);
+	}
+	if (localStorage.over2000){
+	ctx.strokeText("Achieve over 2000 score - " + localStorage.over2000 + "", 500,40);
+	}
+	else{
+	ctx.strokeText("Achieve over 2000 score - Locked", 500,40);
+	}
+	if (localStorage.over3000){
+	ctx.strokeText("Achieve over 3000 score - " + localStorage.over3000 + "", 500,60);
+	}
+	else{
+	ctx.strokeText("Achieve over 3000 score - Locked", 500,60);
+	}
+	if (localStorage.over4000){
+	ctx.strokeText("Achieve over 4000 score - " + localStorage.over4000 + "", 500,80);
+	}
+	else{
+	ctx.strokeText("Achieve over 4000 score - Locked", 500,80);
+	}
+	if (localStorage.over5000){
+	ctx.strokeText("Achieve over 5000 score - " + localStorage.over5000 + "", 500,100);
+	}
+	else{
+	ctx.strokeText("Achieve over 5000 score - Locked", 500,100);
+	}
+	if (localStorage.over6000){
+	ctx.strokeText("Achieve over 6000 score - " + localStorage.over6000 + "", 500,120);
+	}
+	else{
+	ctx.strokeText("Achieve over 6000 score - Locked", 500,120);
+	}
+	if (localStorage.over7000){
+	ctx.strokeText("Achieve over 7000 score - " + localStorage.over7000 + "", 500,140);
+	}
+	else{
+	ctx.strokeText("Achieve over 7000 score - Locked", 500,140);
+	}
+	if (localStorage.over8000){
+	ctx.strokeText("Achieve over 8000 score - " + localStorage.over8000 + "", 500,160);
+	}
+	else{
+	ctx.strokeText("Achieve over 8000 score - Locked", 500,160);
+	}
+	if (localStorage.over9000){
+	ctx.strokeText("Achieve over 9000 score - " + localStorage.over9000 + "", 500,180);
+	}
+	else{
+	ctx.strokeText("Achieve over 9000 score - Locked", 500,180);
+	}
+	}
+	
+	function check_achievements(){
+	if(typeof(Storage)!=="undefined")
+		{
+		
+		if (score > 1000){
+		localStorage.over1000 = "Complete";
+		}
+		if (score > 2000){
+		localStorage.over2000 = "Complete";
+		}
+		if (score > 3000){
+		localStorage.over3000 = "Complete";
+		}
+		if (score > 4000){
+		localStorage.over4000 = "Complete";
+		}
+		if (score > 5000){
+		localStorage.over5000 = "Complete";
+		}
+		if (score > 6000){
+		localStorage.over6000 = "Complete";
+		}
+		if (score > 7000){
+		localStorage.over7000 = "Complete";
+		}
+		if (score > 8000){
+		localStorage.over8000 = "Complete";
+		}
+		if (score > 9000){
+		localStorage.over9000 = "Complete";
+		}
+		
+		
+		
+		}
+	}
+	
 	//Draw our constant information (lives and score for the moment), maybe level?
 	function draw_info(){
 	
@@ -403,6 +510,12 @@
 		case 40:
 		// action when pressing down key
 		  move_down();
+		  break; 
+		  
+		// 'a'
+		case 65:
+		// action when pressing down key
+		  achievements_view();
 		  break; 
 
 		default: 
