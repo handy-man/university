@@ -1,0 +1,46 @@
+
+Simulator run Thu May 02 13:52:27 BST 2013
+uk.ac.aber.rcs.cs211.schedulersim.scheduler.PriorityHighest
+DataFile name:	C:\Users\Nathan\Documents\Test.jobs
+IO1:3	28
+CPU3:2	31
+MIXED1:2	49
+CPU2:1	58
+CPU1:2	65
+Mean elapsed duration	46
+Total CPU time	69
+Total Context Switches	17
+Total Idle time	0
+
+
+Simulator run Thu May 02 13:52:35 BST 2013
+uk.ac.aber.rcs.cs211.schedulersim.scheduler.PriorityHighest
+DataFile name:	C:\Users\Nathan\Documents\Test2.jobs
+IO1:3	27
+INTER2:3	34
+MIXED1:1	50
+INTER:1	61
+CPU1:3	65
+Mean elapsed duration	47
+Total CPU time	69
+Total Context Switches	22
+Total Idle time	0
+
+
+Simulator run Thu May 02 13:52:50 BST 2013
+uk.ac.aber.rcs.cs211.schedulersim.scheduler.PriorityHighest
+DataFile name:	C:\Users\Nathan\Documents\Test3.jobs
+CPU1:2	41
+INTER3:3	79
+IO2:3	80
+CPU2:3	103
+IO1:1	126
+INTER2:1	139
+CPU3:2	139
+MIXED1:2	174
+INTER:1	185
+Mean elapsed duration	118
+Total CPU time	185
+Total Context Switches	39
+Total Idle time	3
+

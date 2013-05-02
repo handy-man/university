@@ -1,0 +1,46 @@
+
+Simulator run Thu May 02 13:50:17 BST 2013
+uk.ac.aber.rcs.cs211.schedulersim.scheduler.RoundRobin
+DataFile name:	C:\Users\Nathan\Documents\Test.jobs
+CPU1:2	48
+CPU2:1	53
+IO1:3	64
+MIXED1:2	67
+CPU3:2	69
+Mean elapsed duration	60
+Total CPU time	69
+Total Context Switches	68
+Total Idle time	0
+
+
+Simulator run Thu May 02 13:50:27 BST 2013
+uk.ac.aber.rcs.cs211.schedulersim.scheduler.RoundRobin
+DataFile name:	C:\Users\Nathan\Documents\Test2.jobs
+CPU1:3	48
+INTER:1	54
+IO1:3	62
+MIXED1:1	63
+INTER2:3	69
+Mean elapsed duration	59
+Total CPU time	69
+Total Context Switches	64
+Total Idle time	0
+
+
+Simulator run Thu May 02 13:50:41 BST 2013
+uk.ac.aber.rcs.cs211.schedulersim.scheduler.RoundRobin
+DataFile name:	C:\Users\Nathan\Documents\Test3.jobs
+INTER:1	92
+IO1:1	100
+MIXED1:2	115
+INTER3:3	121
+INTER2:1	137
+CPU3:2	140
+IO2:3	146
+CPU2:3	168
+CPU1:2	178
+Mean elapsed duration	133
+Total CPU time	182
+Total Context Switches	172
+Total Idle time	0
+

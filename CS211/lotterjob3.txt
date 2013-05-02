@@ -1,0 +1,54 @@
+
+Simulator run Thu May 02 13:55:03 BST 2013
+uk.ac.aber.rcs.cs211.schedulersim.scheduler.Lottery
+DataFile name:	C:\Users\Nathan\Documents\Test3.jobs
+CPU1:2	41
+CPU3:2	51
+CPU2:3	95
+MIXED1:2	122
+IO1:1	144
+INTER2:1	160
+IO2:3	152
+INTER:1	180
+INTER3:3	181
+Mean elapsed duration	125
+Total CPU time	191
+Total Context Switches	29
+Total Idle time	9
+
+
+Simulator run Thu May 02 13:55:15 BST 2013
+uk.ac.aber.rcs.cs211.schedulersim.scheduler.Lottery
+DataFile name:	C:\Users\Nathan\Documents\Test3.jobs
+CPU1:2	45
+CPU2:3	77
+CPU3:2	97
+MIXED1:2	150
+INTER3:3	144
+INTER2:1	161
+IO2:3	156
+IO1:1	170
+INTER:1	185
+Mean elapsed duration	131
+Total CPU time	185
+Total Context Switches	27
+Total Idle time	3
+
+
+Simulator run Thu May 02 13:55:27 BST 2013
+uk.ac.aber.rcs.cs211.schedulersim.scheduler.Lottery
+DataFile name:	C:\Users\Nathan\Documents\Test3.jobs
+CPU1:2	51
+CPU3:2	72
+INTER2:1	94
+IO1:1	122
+MIXED1:2	123
+CPU2:3	156
+IO2:3	154
+INTER:1	182
+INTER3:3	174
+Mean elapsed duration	125
+Total CPU time	184
+Total Context Switches	27
+Total Idle time	2
+
