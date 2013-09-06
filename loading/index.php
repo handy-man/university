@@ -38,8 +38,31 @@
 	$steamid = "STEAM_0:$authserver:$authid";
 	$link = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steam_api . '&steamids=' . $communityid . '&format=json');
 	$myarray = json_decode($link, true);
+	//Music loading!
+		
 ?>
+
+
 <body>
+	<audio id="bg" loop>
+					<source src="<?PHP echo $wav_src; ?>" type="audio/x-wav">
+					Your browser does not support the HTML5 audio tag
+	</audio>
+	<?PHP
+	if ($wav_enabled == true){
+		echo "<script type='text/javascript'>";
+		echo "bg.play();";
+		echo "</script>";
+	}
+	
+	if ($youtube_enabled == true){
+		echo "<object type='hidden' style='height: 0; width: 0'>
+			<param name='movie' value='http://www.youtube.com/v/" . $youtube_src . "_3kKxyf6b-U?version=3&autoplay=1&loop=1'>
+			<param name='allowFullScreen' value='true'><param name='allowScriptAccess' value='always'><embed src='http://www.youtube.com/v/" . $youtube_src . "?version=3&autoplay=1&loop=1' type='application/x-shockwave-flash' allowfullscreen='true' allowScriptAccess='always' width='1' height='1'>
+		</object>";
+	}
+	
+	?>
 	<div id="header"></div>
 	<div id="site_title">
 		<span><?php echo $title_text;?></span>

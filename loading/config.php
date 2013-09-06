@@ -74,4 +74,22 @@
 	
 	//All content is split up into box's this is the colour of that box, default R:0 G:0 B:0 AKA black.
 	$box_backgroud_blue = "0";
+	
+	//New since 1.3
+	//The enables the use of a .wav file to be used in your background music (must be a .wav file! don't complain to me that other formats don't work, convert the file!)
+	//The wav file should be local to your website hosting to make sure load times are working out great, but this isn't always going to be the case.
+	$wav_enabled = false;
+	
+	//This is the source variable of the .WAV file, $wav_enabled must be set to true for this to become used.
+	$wav_src = "";
+	
+	//This enables the use of a youtube music video, however you must be very careful to only get the part of the link that is required.
+	//Every youtube link looks like this: http://www.youtube.com/watch?v=aHjpOzsQ9YI 
+	//I want you to only place in the variable $youtube_src the letters after the "v=" so in this example i would want "aHjpOzsQ9YI"
+	//This would give me a $youtube_src link that looks like this: "$youtube_src = "aHjpOzsQ9YI";"
+	//This process does not work for every video on YouTube, it always seems to work on the non-HD versions of music video's as the HD stops it from working properly.
+	$youtube_enabled = false;
+	
+	//This is the YouTube source variable, REMEMBER! i only want the part after the v= seen in all YouTube links! nothing else! 
+	$youtube_src = "";
 ?>
