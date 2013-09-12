@@ -7,7 +7,7 @@
 	$font_src = "";
 	
 	//Your steamAPI key, this is required and can be applied for here: http://steamcommunity.com/dev
-	$steam_api = "";
+	$steam_api = "CA269D3FE157CBEA7386C9830FCC218D";
 	
 	//Custom serverip, the serverip address comes from Steam data. If a user's profile is set to private/friends only this field will be blank, so set a custom one.
 	$custom_serverip = false;
@@ -88,4 +88,14 @@
 	
 	//This is the YouTube source variable, REMEMBER! i only want the part after the v= seen in all YouTube links! nothing else! 
 	$youtube_src = "";
+	
+	
+	$connect = mysql_connect("127.0.0.1", "handyman_open", "3213560921*+*");
+	$db_select = mysql_select_db('handyman_open_load');
+	if (!connect) {
+
+		die('ERROR, Contact Handy_man immediately' . mysql_error());
+		
+	}
+
 ?>
