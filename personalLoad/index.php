@@ -1,9 +1,18 @@
 <?PHP
-	//Include our config file, we need this to get certain variables that we changed.
-
-	//Get the steamid (really the community id)
+	//Community ID
 	$communityid = $_GET["steamid"];
+	// To be populated by our SQL server
 	$url_to_redirect = "http://www.youtube.com/watch?v=aHjpOzsQ9YI";
+	
+	//Connect to our database
+	
+	//Get our users redirect url
+	
+	//If redirecturl is empty abandon redirect continue with the rest of the script
+	
+	//If redirecturl is not empty redirect the user.
+	
+	//Make this into a single file elsewhere so that i can tell them to include it at the top of a different loadingurl.
 	
 	if ($communityid == "76561198009142325"){
 		header('Location: ' . $url_to_redirect . '');
