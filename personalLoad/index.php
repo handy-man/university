@@ -3,19 +3,38 @@
 	$communityid = $_GET["steamid"];
 	// To be populated by our SQL server
 	$url_to_redirect = "http://www.youtube.com/watch?v=aHjpOzsQ9YI";
-	
+	$host = "localhost";
+	$dbname = "handyman_open_load";
+	$user = "handyman_load";
+	$pass = "3213560921*+*";
 	//Connect to our database
+
+	$connect = mysql_connect("localhost", $user, $pass);
+	$db_select = mysql_select_db('handyman_open_load'); //We need it to be ttt_stats because that's hard coded into the lua scripts (we should work on that)
+if (!connect) {
+
+	die('ERROR,' . mysql_error());
 	
+}
+		#$player = mysql_query("INSERT INTO `handyman_open_load`.`users` (`steamid`, `youtube_enabled`, `youtube_src`, `redirect_enabled`, `redirect_src`) VALUES ('$steamid', '$youtube_enabled', '$youtube_src', '$redirect_enabled', '$redirect_src')");
+
 	//Get our users redirect url
-	
+	$redirect = mysql_query("SELECT * FROM `users` WHERE `steamid` = '$steamid' LIMIT 0, 30 ");
+
 	//If redirecturl is empty abandon redirect continue with the rest of the script
+	while($playerarray = mysql_fetch_array( $redirect )) {
+	$player_steamid = $playerarray['steamid'];
+	$youtube_enabled = $playerarray['youtube_enabled'];
+	$youtube_src = $playerarray['youtube_src'];
+	$redirect_enabled = $playerarray['redirect_enabled'];
+	$redirect_src = $playerarray['redirect_src'];
+	}
 	
-	//If redirecturl is not empty redirect the user.
-	
-	//Make this into a single file elsewhere so that i can tell them to include it at the top of a different loadingurl.
-	
-	if ($communityid == "76561198009142325"){
-		header('Location: ' . $url_to_redirect . '');
+	if ($redirect_enabled == 0 && $redirect_src == ""){
+	#do nothing
+	}
+	else{
+			header('Location: ' . $redirect_src . '');
 	}
 	
 		require("./config.php");	
