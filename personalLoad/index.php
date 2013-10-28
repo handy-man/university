@@ -1,4 +1,6 @@
 <?PHP
+
+phpinfo();
 	//Community ID
 	$communityid = $_GET["steamid"];
 	// To be populated by our SQL server
@@ -9,29 +11,27 @@
 	$pass = "3213560921*+*";
 	//Connect to our database
 
-	$connect = mysql_connect("localhost", $user, $pass);
-	$db_select = mysql_select_db('handyman_open_load'); //We need it to be ttt_stats because that's hard coded into the lua scripts (we should work on that)
-if (!connect) {
+	$connect = mysqli_connect($host,$user,$pass,$dbname);
 
-	die('ERROR,' . mysql_error());
-	
-}
 		#$player = mysql_query("INSERT INTO `handyman_open_load`.`users` (`steamid`, `youtube_enabled`, `youtube_src`, `redirect_enabled`, `redirect_src`) VALUES ('$steamid', '$youtube_enabled', '$youtube_src', '$redirect_enabled', '$redirect_src')");
 
 	//Get our users redirect url
-	$redirect = mysql_query("SELECT * FROM `users` WHERE `steamid` = '$steamid' LIMIT 0, 30 ");
+	$redirect = mysqli_query($connect, "SELECT * FROM `users` WHERE `steamid` = '$steamid' LIMIT 0, 30");
 
 	//If redirecturl is empty abandon redirect continue with the rest of the script
-	while($playerarray = mysql_fetch_array( $redirect )) {
+	$playerarray = mysqli_fetch_array( $redirect,MYSQLI_ASSOC );
 	$player_steamid = $playerarray['steamid'];
 	$youtube_enabled = $playerarray['youtube_enabled'];
 	$youtube_src = $playerarray['youtube_src'];
 	$redirect_enabled = $playerarray['redirect_enabled'];
 	$redirect_src = $playerarray['redirect_src'];
-	}
 	
-	if ($redirect_enabled == 0 && $redirect_src == ""){
+	
+	if ($redirect_enabled == 0){
 	#do nothing
+	echo "COCKFAG";
+	echo $redirect_enabled;
+	echo $redirect_src;
 	}
 	else{
 			header('Location: ' . $redirect_src . '');
