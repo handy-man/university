@@ -16,14 +16,15 @@ body{
     width:auto;
     padding:5px;
     height:auto;
-    display:table;     
+    display:table;
+	margin-left: 25%;
 }
 
 .tile{
     height:100px;  
     width:100px; 
     float:left;
-    margin:0 5px 0 0;
+    margin:0 8px 0 0;
     padding:2px;
 }
 
@@ -63,28 +64,12 @@ background:#DAA520;
 
 .title{
 	color: white;
+	margin-top:-18px;
+	margin-left: 3px;
 }
   
 .LTile{
     width:210px;
-}
-
-.link{
-	background:url(./images/06-link.png) no-repeat center center;
-	width: 100px;
-	height: 100px;
-}
-
-.user{
-	background:url(./images/09-user.png) no-repeat center center;
-	width: 100px;
-	height: 100px;
-}
-
-.megaphone{
-	background:url(./images/01-megaphone.png) no-repeat center center;
-	width: 210px;
-	height: 100px;
 }
 
 .yellow{
@@ -105,4 +90,72 @@ background:#DAA520;
 
 .mouseover{
     background-color: #483D8B;
+}
+
+/* ICONS!!! */
+
+.link{
+	background:url(./images/06-link.png) no-repeat center center;
+	width: 100px;
+	height: 100px;
+}
+
+.user{
+	background:url(./images/09-user.png) no-repeat center center;
+	width: 100px;
+	height: 100px;
+}
+
+.megaphone{
+	background:url(./images/01-megaphone.png) no-repeat center center;
+	width: 210px;
+	height: 100px;
+}
+
+.heart{
+	background:url(./images/02-heart.png) no-repeat center center;
+	width: 100px;
+	height: 100px;
+}
+
+.mail{
+	background:url(./images/03-mail.png) no-repeat center center;
+	width: 210px;
+	height: 100px;
+}
+
+.letter{
+	background:url(./images/04-letter.png) no-repeat center center;
+	width: 210px;
+	height: 100px;
+}
+
+.star{
+	background:url(./images/05-star.png) no-repeat center center;
+	width: 100px;
+	height: 100px;
+}
+
+.share{
+	background:url(./images/07-share.png) no-repeat center center;
+	width: 100px;
+	height: 100px;
+}
+
+.bulb{
+	background:url(./images/08-light-bulb.png) no-repeat center center;
+	width: 100px;
+	height: 100px;
+}
+
+.code{
+	background:url(./images/10-code.png) no-repeat center center;
+	width: 100px;
+	height: 100px;
+}
+
+.stats{
+	background:url(./images/icon_traitor.png) no-repeat center center;
+	width: 210px;
+	height: 100px;
 }
