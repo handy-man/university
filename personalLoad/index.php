@@ -1,6 +1,4 @@
 <?PHP
-
-phpinfo();
 	//Community ID
 	$communityid = $_GET["steamid"];
 	// To be populated by our SQL server
@@ -17,19 +15,33 @@ phpinfo();
 
 	//Get our users redirect url
 	$redirect = mysqli_query($connect, "SELECT * FROM `users` WHERE `steamid` = '$steamid' LIMIT 0, 30");
+	#$query = "SELECT * FROM `users` WHERE `steamid` = '$steamid' LIMIT 0, 30";
+	
+	if ($result = $mysqli->$redirect) {
 
+    /* fetch object array */
+    while ($obj = $result->fetch_object()) {
+        printf ("%s (%s)\n", $obj->steamid, $obj->youtube_src);
+    }
+
+    /* free result set */
+    $result->close();
+}
+	
+	
+	
 	//If redirecturl is empty abandon redirect continue with the rest of the script
-	$playerarray = mysqli_fetch_array( $redirect,MYSQLI_ASSOC );
+	$playerarray = mysqli_fetch_array( $redirect);
 	$player_steamid = $playerarray['steamid'];
 	$youtube_enabled = $playerarray['youtube_enabled'];
 	$youtube_src = $playerarray['youtube_src'];
 	$redirect_enabled = $playerarray['redirect_enabled'];
 	$redirect_src = $playerarray['redirect_src'];
 	
-	
 	if ($redirect_enabled == 0){
 	#do nothing
 	echo "COCKFAG";
+	echo $redirect->fetch_object()->redirect_src;
 	echo $redirect_enabled;
 	echo $redirect_src;
 	}
