@@ -27,6 +27,14 @@ body{
     padding:2px;
 }
 
+.sits{
+	background:url(./images/sits_small.png) no-repeat center center;
+	height:30px;  
+    width:155px; 
+    margin:-80 50px 15px 71%;
+    padding:2px;
+}
+
 .moveLeft{
 	margin-left: 30px;
 }
@@ -39,8 +47,8 @@ body{
     width:210px;
 }
 
-.facebook{
-	background:url(./images/iconFacebook.png) no-repeat center center;
+.link{
+	background:url(./images/06-link.png) no-repeat center center;
 	width: 100px;
 	height: 100px;
 }
