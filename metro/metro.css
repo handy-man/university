@@ -27,12 +27,34 @@ body{
     padding:2px;
 }
 
+.yellow:hover{
+background:#CD0000; 
+}
+
+.blue:hover{
+background:#2E8B57; 
+}
+
+.green:hover{
+background:#4682B4; 
+}
+
+.red:hover{
+background:#DAA520; 
+}
+
+.sits:hover{
+	background:url(./images/sits_small.png) no-repeat center center;
+}
+
 .sits{
 	background:url(./images/sits_small.png) no-repeat center center;
 	height:30px;  
     width:155px; 
-    margin:-80 50px 15px 71%;
+    margin:-50 50px 15px 85%;
     padding:2px;
+	z-index:-1;
+	position:absoloute;
 }
 
 .moveLeft{
