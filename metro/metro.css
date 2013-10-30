@@ -96,66 +96,77 @@ background:#DAA520;
 
 .link{
 	background:url(./images/06-link.png) no-repeat center center;
-	width: 100px;
 	height: 100px;
 }
 
 .user{
 	background:url(./images/09-user.png) no-repeat center center;
-	width: 100px;
 	height: 100px;
 }
 
 .megaphone{
 	background:url(./images/01-megaphone.png) no-repeat center center;
-	width: 210px;
 	height: 100px;
 }
 
 .heart{
 	background:url(./images/02-heart.png) no-repeat center center;
-	width: 100px;
 	height: 100px;
 }
 
 .mail{
 	background:url(./images/03-mail.png) no-repeat center center;
-	width: 210px;
 	height: 100px;
 }
 
 .letter{
 	background:url(./images/04-letter.png) no-repeat center center;
-	width: 210px;
 	height: 100px;
 }
 
 .star{
 	background:url(./images/05-star.png) no-repeat center center;
-	width: 100px;
 	height: 100px;
 }
 
 .share{
 	background:url(./images/07-share.png) no-repeat center center;
-	width: 100px;
 	height: 100px;
 }
 
 .bulb{
 	background:url(./images/08-light-bulb.png) no-repeat center center;
-	width: 100px;
 	height: 100px;
 }
 
 .code{
 	background:url(./images/10-code.png) no-repeat center center;
-	width: 100px;
 	height: 100px;
 }
 
 .stats{
-	background:url(./images/icon_traitor.png) no-repeat center center;
-	width: 210px;
+	background:url(./images/stats.png) no-repeat center center;
+	background-size:182px 64px;
+	height: 100px;
+}
+
+.steam{
+	background:url(./images/steam.png) no-repeat center center;
+	height: 100px;
+}
+
+.coin{
+	background:url(./images/coin.png) no-repeat center center;
+	height: 100px;
+}
+
+.coder{
+	background:url(./images/coder-hire.png) no-repeat center center;
+	background-size:64px 64px;
+	height: 100px;
+}
+
+.paypal{
+background:url(./images/paypal-icon.png) no-repeat center center;
 	height: 100px;
 }
