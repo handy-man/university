@@ -1,35 +1,13 @@
 <?PHP
+	require("./config.php");
 	//Community ID
 	$communityid = $_GET["steamid"];
-	// To be populated by our SQL server
-	$url_to_redirect = "http://www.youtube.com/watch?v=aHjpOzsQ9YI";
-	$host = "localhost";
-	$dbname = "handyman_open_load";
-	$user = "handyman_load";
-	$pass = "3213560921*+*";
+	#$communityid = $communityid = $mysqli->real_escape_string($communityid);
 	//Connect to our database
-
 	$connect = mysqli_connect($host,$user,$pass,$dbname);
-
-		#$player = mysql_query("INSERT INTO `handyman_open_load`.`users` (`steamid`, `youtube_enabled`, `youtube_src`, `redirect_enabled`, `redirect_src`) VALUES ('$steamid', '$youtube_enabled', '$youtube_src', '$redirect_enabled', '$redirect_src')");
-
 	//Get our users redirect url
-	$redirect = mysqli_query($connect, "SELECT * FROM `users` WHERE `steamid` = '$steamid' LIMIT 0, 30");
-	#$query = "SELECT * FROM `users` WHERE `steamid` = '$steamid' LIMIT 0, 30";
-	
-	if ($result = $mysqli->$redirect) {
-
-    /* fetch object array */
-    while ($obj = $result->fetch_object()) {
-        printf ("%s (%s)\n", $obj->steamid, $obj->youtube_src);
-    }
-
-    /* free result set */
-    $result->close();
-}
-	
-	
-	
+	$communityid = mysqli_real_escape_string($connect, $communityid);
+	$redirect = mysqli_query($connect, "SELECT * FROM `users` WHERE `steamid` = '$communityid' LIMIT 0, 1");	
 	//If redirecturl is empty abandon redirect continue with the rest of the script
 	$playerarray = mysqli_fetch_array( $redirect);
 	$player_steamid = $playerarray['steamid'];
@@ -40,16 +18,10 @@
 	
 	if ($redirect_enabled == 0){
 	#do nothing
-	echo "COCKFAG";
-	echo $redirect->fetch_object()->redirect_src;
-	echo $redirect_enabled;
-	echo $redirect_src;
 	}
 	else{
 			header('Location: ' . $redirect_src . '');
 	}
-	
-		require("./config.php");	
 	//See if the second number in the steamid (the auth server) is 0 or 1. Odd is 1, even is 0
 	$authserver = bcsub($communityid, '76561197960265728') & 1;
 	//Get the third number of the steamid
