@@ -17,10 +17,20 @@
 	$redirect_src = $playerarray['redirect_src'];
 	
 	if ($redirect_enabled == 0){
-	#do nothing
+		#run our youtube sounds
+		if ($youtube_enabled == true){
+		echo "<object type='hidden' style='height: 0; width: 0'>
+			<param name='movie' value='http://www.youtube.com/v/" . $youtube_src . "_3kKxyf6b-U?version=3&autoplay=1&loop=1'>
+			<param name='allowFullScreen' value='true'><param name='allowScriptAccess' value='always'><embed src='http://www.youtube.com/v/" . $youtube_src . "?version=3&autoplay=1&loop=1' type='application/x-shockwave-flash' allowfullscreen='true' allowScriptAccess='always' width='1' height='1'>
+		</object>";
+	}
+	}
+	else if($redirect_src != ""){
+	#redirect our user to the loading screen of our choice
+			header('Location: ' . $redirect_src . '');
 	}
 	else{
-			header('Location: ' . $redirect_src . '');
+	#We haven't got a personal loading screen, do nothing?
 	}
 	//See if the second number in the steamid (the auth server) is 0 or 1. Odd is 1, even is 0
 	$authserver = bcsub($communityid, '76561197960265728') & 1;
@@ -32,25 +42,8 @@
 	$myarray = json_decode($link, true);
 ?>
 <body>
-
-	<audio id="bg" loop>
-					<source src="<?PHP echo $wav_src; ?>" type="audio/x-wav">
-					Your browser does not support the HTML5 audio tag
-	</audio>
 	<?PHP
-	if ($wav_enabled == true){
-		echo "<script type='text/javascript'>";
-		echo "bg.play();";
-		echo "</script>";
-	}
-	
-	if ($youtube_enabled == true){
-		echo "<object type='hidden' style='height: 0; width: 0'>
-			<param name='movie' value='http://www.youtube.com/v/" . $youtube_src . "_3kKxyf6b-U?version=3&autoplay=1&loop=1'>
-			<param name='allowFullScreen' value='true'><param name='allowScriptAccess' value='always'><embed src='http://www.youtube.com/v/" . $youtube_src . "?version=3&autoplay=1&loop=1' type='application/x-shockwave-flash' allowfullscreen='true' allowScriptAccess='always' width='1' height='1'>
-		</object>";
-	}
-	
+
 	?>
 
 	<div id="header"></div>
