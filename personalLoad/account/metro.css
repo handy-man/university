@@ -1,0 +1,73 @@
+body{
+    font-family: Century;
+    background: rgb(51,51,51);
+    color: #fff;
+    padding:20px;
+}
+  
+.page{
+    width:auto;
+    height:auto;    
+}
+
+.newlineHor{
+    width:auto;
+    padding:5px;
+    height:auto;
+    display:table;
+	margin-left: 25%;
+}
+
+.tile{
+    height:100px;  
+    width:100px; 
+    float:left;
+    margin:0 8px 0 0;
+    padding:2px;
+}
+
+.formtile{
+	height:200px;  
+    width:300px; 
+    float:left;
+    margin:0 8px 0 0;
+    padding:2px;
+}
+
+.title{
+	color: white;
+	margin-top:-18px;
+	margin-left: 3px;
+}
+  
+.LTile{
+    width:210px;
+}
+
+.yellow{
+    background:#DAA520;
+}
+  
+.red{
+    background:#CD0000; 
+}
+  
+.blue{
+    background:#4682B4;
+}
+  
+.green{
+    background-color: #2E8B57;
+}
+
+.mouseover{
+    background-color: #483D8B;
+}
+
+/* ICONS!!! */
+
+.steam{
+/*<?php print $myarray['response']['players'][0]['avatarfull']; ?>    <---Add that source later*/
+background:url(./images/06-link.png) no-repeat center center;
+height: 100px;
+}
