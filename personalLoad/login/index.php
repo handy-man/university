@@ -27,7 +27,7 @@ try {
                 preg_match($ptn, $id, $matches);
 				$steamid64 = $matches[1];
 				$_SESSION['steamid'] = $steamid64;
-				header('Location: ' . $home . "account/" . '');
+				header('Location: ' . $home . "login/logging.php" . '');
         }
 
     }
