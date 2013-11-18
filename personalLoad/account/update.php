@@ -14,6 +14,8 @@ if ($red_enabled == "disabled"){$red_enabled = 0;} else {$red_enabled = 1;}
 //Community ID
 	//Connect to our database
 	$connect = mysqli_connect($host,$user,$pass,$dbname);
+	$yt_src = mysqli_real_escape_string($connect, $yt_src);
+	$red_src = mysqli_real_escape_string($connect, $red_src);
 	
 	if ($communityid != ""){
 		#insert data!

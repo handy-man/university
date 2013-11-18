@@ -53,7 +53,9 @@ alert("Please email me for a copy of my CV");
 		<a href="#" title="User image" alt="User image">
         <div class="tile yellow">
 		<div class="steam"></div>
-		<div class="title"></div>
+		<a href="<?PHP echo $home . "index.php?steamid=" . $communityid . ""; ?>" title="Preview loading screen" alt="Preview loading screen">
+		<div class="tile green" style="float: left; margin-top: 8px; margin-left: -2px;"><div class="link"></div><div class="title">Preview</div></div>
+		</a>
         </div>
 		</a>
         <div class="formtile blue">
@@ -87,6 +89,19 @@ alert("Please email me for a copy of my CV");
 		</form>
         </div>
     </div> 
+	
+	<div class="newlineHor">
+	<div class ="LTile green">
+	Notes: The redirect overwrites any youtube music that you use.
+	Youtube source must be the string of data after the v= as seen on all youtube video's.
+	</div>
+	</div>
+	
+	<div class="newlineHor">
+	<div class ="LTile red">
+	Example: Youtube source = "aHjpOzsQ9YI", this means that youtube music being enabled with that variable as the source will have the following video play as music: <a href="http://www.youtube.com/watch?v=aHjpOzsQ9YI">http://www.youtube.com/watch?v=aHjpOzsQ9YI</a>
+	</div>
+	</div>
 
 </div>
 </body>

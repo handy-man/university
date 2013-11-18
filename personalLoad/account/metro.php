@@ -19,6 +19,10 @@ body{
     color: #fff;
     padding:20px;
 }
+
+a{
+color: white;
+}
   
 .page{
     width:auto;
@@ -30,7 +34,7 @@ body{
     padding:5px;
     height:auto;
     display:table;
-	margin-left: 25%;
+	margin-left: 32.5%;
 }
 
 .tile{
@@ -56,7 +60,7 @@ body{
 }
   
 .LTile{
-    width:210px;
+    width:415px;
 }
 
 .yellow{
@@ -82,7 +86,11 @@ body{
 /* ICONS!!! */
 
 .steam{
-/*<?php print $myarray['response']['players'][0]['avatar']; ?>    <---Add that source later*/
 background:url(<?php print $myarray['response']['players'][0]['avatarmedium']; ?>) no-repeat center center;
 height: 100px;
+}
+
+.link{
+	background:url(./images/06-link.png) no-repeat center center;
+	height: 100px;
 }

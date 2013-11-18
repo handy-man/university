@@ -97,5 +97,4 @@ function checkEmail(theForm) {
 <div align="center">
 <button class='button' type='submit'>Ok</button></div>
 
-
 <?PHP include("./includes/footer.php")?>
