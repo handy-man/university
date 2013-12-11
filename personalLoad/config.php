@@ -7,5 +7,7 @@
 	
 	$home = "http://www.thehiddennation.com/personalLoad/";
 	
+	$website = "www.thehiddennation.com";
+	
 	session_start();
 ?>

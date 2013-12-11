@@ -5,7 +5,7 @@ require '../openid.php';
 require '../config.php';
 try {
     # Change 'localhost' to your domain name.
-    $openid = new LightOpenID('www.thehiddennation.com');
+    $openid = new LightOpenID($website);
     if(!$openid->mode) {
         if(isset($_GET['login'])) {
             $openid->identity = 'http://steamcommunity.com/openid';
