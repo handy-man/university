@@ -2,7 +2,7 @@
 require("../config.php");
 require("../openid.php");
 $communityid = $_SESSION['steamid'];
-
+$account = "account/";
 $yt_enabled = $_POST['yt_status'];
 $yt_src = $_POST['yt_src'];
 $red_enabled = $_POST['rp_status'];
@@ -20,7 +20,7 @@ if ($red_enabled == "disabled"){$red_enabled = 0;} else {$red_enabled = 1;}
 	if ($communityid != ""){
 		#insert data!
 		$new_user = mysqli_query($connect, "UPDATE users SET youtube_enabled ='$yt_enabled', youtube_src ='$yt_src', redirect_enabled ='$red_enabled', redirect_src ='$red_src' WHERE steamid ='$communityid'");
-		header('Location: ' . $home . "index.php?steamid=" . $communityid . '');
+		header('Location: ' . $home . $account . '');
 	}
 	else{
 	#header('Location: ' . $home . "login/" . '');
