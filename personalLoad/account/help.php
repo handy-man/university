@@ -14,18 +14,6 @@ if ($_SESSION['steamid'] == ""){
 	$steamid = "STEAM_0:$authserver:$authid";
 	$link = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $steam_api . '&steamids=' . $communityid . '&format=json');
 	$myarray = json_decode($link, true);
-	
-	$connect = mysqli_connect($host,$user,$pass,$dbname);
-	//Get our users redirect url
-	$communityid = mysqli_real_escape_string($connect, $communityid);
-	$redirect = mysqli_query($connect, "SELECT * FROM `users` WHERE `steamid` = '$communityid' LIMIT 0, 1");	
-	//If redirecturl is empty abandon redirect continue with the rest of the script
-	$playerarray = mysqli_fetch_array( $redirect);
-	$player_steamid = $playerarray['steamid'];
-	$youtube_enabled = $playerarray['youtube_enabled'];
-	$youtube_src = $playerarray['youtube_src'];
-	$redirect_enabled = $playerarray['redirect_enabled'];
-	$redirect_src = $playerarray['redirect_src'];
 ?>
 
 <script src="slert.js"></script>
@@ -75,47 +63,8 @@ if ($_SESSION['steamid'] == ""){
     <div class="container">
 
       <div class="starter-template">
-	  <?PHP
-	  if ($_SESSION['updated'] == true){
-		echo "<div class='alert alert-success fade in hints'>
-	  Success! Details updated, you can check the new loading screen in the preview <a href=" . $home . "index.php?steamid=" . $communityid . ">Here</a>.
-	  <a class='close' data-dismiss='alert' href='#' aria-hidden='true'>&times;</a>
-	  </div>";
-	  $_SESSION['updated'] = false;
-	  }
-	  ?>
-	  <h1 id="alert" class="hints">PersonalLoad - Set your own loading screen</h1>
-		<form role="form" action="update.php" method="post">
 
-  <div class="form-group">
-        <label>
-		YouTube Music status:
-        <select class="form-control" id="yt_status" name="yt_status">
-		<option value="enabled"<?PHP if ($youtube_enabled == 1){echo "selected";}?>>Enabled</option>
-		<option value="disabled"<?PHP if ($youtube_enabled == 0){echo "selected";}?>>Disabled</option>
-		</select>
-      </label>
-	  </br>
-    <label for="YouTubeSource">YouTube Source link:</label>
-    <input type="text" class="form-control" id="YouTubeSource" placeholder="Example: aHjpOzsQ9YI" name="yt_src" value="<?PHP if ($youtube_src != ""){echo $youtube_src;}?>">
-	<span class="help-block hints">Youtube source = "aHjpOzsQ9YI", this means that youtube music being enabled with that variable as the source will have the following music video play in the background <a href ="http://www.youtube.com/watch?v=aHjpOzsQ9YI">Example</a></span>
-  </div>
-  <div class="form-group">
-        <label>
-		Redirect Source status:
-        <select class="form-control" id="rp_status" name="rp_status">
-		<option value="enabled" <?PHP if ($redirect_enabled == 1){echo "selected";}?>>Enabled</option>
-		<option value="disabled" <?PHP if ($redirect_enabled == 0){echo "selected";}?>>Disabled</option>
-		</select>
-      </label>
-	  </br>
-    <label for="redirectSource">Redirect Source Link:</label>
-    <input type="text" class="form-control" id="redirectSource" name="rp_src" placeholder="Example http://www.garryspin.com" value="<?PHP if ($redirect_src != ""){echo $redirect_src;}?>">
-	<span class="help-block hints">If your redirect source is enabled (via the above checkbox) it will overwrite the YouTube music.</span>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
-      </div>
+      </div><!-- /.starter template -->
 
     </div><!-- /.container -->
 
