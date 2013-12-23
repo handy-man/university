@@ -17,18 +17,16 @@
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<meta name="description=" content="Trouble in Terrorist Town Stat tracker, provides a series of Stats for game servers running the popular TTT Gamemode for Garry's Mod.">
+		<meta name="description=" content="Personal Load Installation script">
 		<meta name="author" content="Nathan Hand, www.thehiddennation.com">
-		<meta name="keywords" content="TTT, Trouble in terrorist town, Garry's mod, Gmod, TTTS, Stats, statistics, TTTStats, Stat Tracker, thehiddennation, Innocent, Detective, Traitor, Steam, valve, sngaming.org, sky-netgaming.com, skynet, gameservers, tracking">
+		<meta name="keywords" content="Installation PersonalLoad Personal load">
 		<link href="static/main.css" media="screen" rel="stylesheet" type="text/css" />
-		<title>[TTTS] Trouble in Terrorist Town Stats</title>
+		<title>Personal Load installation script.</title>
 	</head>
 			<body>
 				<div id="header">
 				  <div>
-				  <center>
-				<a href="http://www.thehiddennation.com/ttt_stats" id="logo"><img src="./static/images/skynet_logo.png" alt="www.thehiddennation.com" title="www.thehiddennation.com" style="width: 550px; height: 90px;"/></a>
-				</center>
+				<h2 style="color: white;">PersonalLoad - Installation script<h2>
 				  </div>
 				</div>
 				
