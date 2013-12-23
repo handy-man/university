@@ -19,6 +19,7 @@ if ($red_enabled == "disabled"){$red_enabled = 0;} else {$red_enabled = 1;}
 	
 	if ($communityid != ""){
 		#insert data!
+		$_SESSION['updated'] = true;
 		$new_user = mysqli_query($connect, "UPDATE users SET youtube_enabled ='$yt_enabled', youtube_src ='$yt_src', redirect_enabled ='$red_enabled', redirect_src ='$red_src' WHERE steamid ='$communityid'");
 		header('Location: ' . $home . $account . '');
 	}

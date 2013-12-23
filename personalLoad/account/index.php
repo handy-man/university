@@ -28,81 +28,101 @@ if ($_SESSION['steamid'] == ""){
 	$redirect_src = $playerarray['redirect_src'];
 ?>
 
-<html>
-<head>
-    <link rel="stylesheet" href="metro.php"/>
-    <meta charset="UTF-8"/>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>	
-	<script>
-function emailalert()
-{
-alert("Please email me for a copy of my CV");
-}
-</script>
-</head>
-<body>
-    <h1>PersonalLoad - Set your own loading screen</h1>
-	<!--
-	<div class="sits">
-	</div>
-	-->
-	
-<div class="page">
+<script src="slert.js"></script>
 
-    <div class="newlineHor">
-		<a href="#" title="User image" alt="User image">
-        <div class="tile yellow">
-		<div class="steam"></div>
-		<a href="<?PHP echo $home . "index.php?steamid=" . $communityid . ""; ?>" title="Preview loading screen" alt="Preview loading screen">
-		<div class="tile green" style="float: left; margin-top: 8px; margin-left: -2px;"><div class="link"></div><div class="title">Preview</div></div>
-		</a>
-        </div>
-		</a>
-        <div class="formtile blue">
-		<span>
-		Youtube music :
-		</span>
-		</br>
-		<form name="input" action="update.php" method="post">
-		<select name="yt_status">
-		<option value="enabled"<?PHP if ($youtube_enabled == 1){echo "selected";}?>>enabled</option>
-		<option value="disabled" <?PHP if ($youtube_enabled == 0){echo "selected";}?>>disabled</option>
-		</select>
-		</br>
-		<span>Youtube source:</span>
-		</br>
-		<input type="text" name="yt_src" value="<?PHP if ($youtube_src != ""){echo $youtube_src;}?>"><br>
-		<label>
-		Redirect page:
-		</label>
-		</br>
-		<select id="rp_status" name="rp_status">
-		<option value="enabled" <?PHP if ($redirect_enabled == 1){echo "selected";}?>>enabled</option>
-		<option value="disabled" <?PHP if ($redirect_enabled == 0){echo "selected";}?>>disabled</option>
-		</select>
-		</br>
-		redirect page source:
-		</br>
-		<input type="text" name="rp_src" value="<?PHP if ($redirect_src != ""){echo $redirect_src;}?>">
-		</br>
-		<input type="submit" value="Submit">
-		</form>
-        </div>
-    </div> 
-	
-	<div class="newlineHor">
-	<div class ="LTile green">
-	Notes: The redirect overwrites any youtube music that you use.
-	Youtube source must be the string of data after the v= as seen on all youtube video's.
-	</div>
-	</div>
-	
-	<div class="newlineHor">
-	<div class ="LTile red">
-	Example: Youtube source = "aHjpOzsQ9YI", this means that youtube music being enabled with that variable as the source will have the following video play as music: <a href="http://www.youtube.com/watch?v=aHjpOzsQ9YI">http://www.youtube.com/watch?v=aHjpOzsQ9YI</a>
-	</div>
-	</div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Nathan Hand, Handy_man, www.thehiddennation.com">
 
-</div>
-</body>
+    <title>PersonalLoad - Set your own loadingurl</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="starter-template.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+	
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Personal Load</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="<?PHP echo $home . "index.php?steamid=" . $communityid . ""; ?>">Preview</a></li>
+            <li><a href="http://www.thehiddennation.com">Community Forums</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	
+    <div class="container">
+
+      <div class="starter-template">
+	  <?PHP
+	  if ($_SESSION['updated'] == true){
+		echo "<div class='alert alert-success fade in hints'>
+	  Success! Details updated, you can check the new loading screen in the preview <a href=" . $home . "index.php?steamid=" . $communityid . ">Here</a>.
+	  <a class='close' data-dismiss='alert' href='#' aria-hidden='true'>&times;</a>
+	  </div>";
+	  $_SESSION['updated'] = false;
+	  }
+	  ?>
+	  <h1 id="alert" class="hints">PersonalLoad - Set your own loading screen</h1>
+		<form role="form" action="update.php" method="post">
+
+  <div class="form-group">
+        <label>
+		YouTube Music status:
+        <select class="form-control" id="yt_status" name="yt_status">
+		<option value="enabled"<?PHP if ($youtube_enabled == 1){echo "selected";}?>>Enabled</option>
+		<option value="disabled"<?PHP if ($youtube_enabled == 0){echo "selected";}?>>Disabled</option>
+		</select>
+      </label>
+	  </br>
+    <label for="YouTubeSource">YouTube Source link:</label>
+    <input type="text" class="form-control" id="YouTubeSource" placeholder="YouTube Souce Link" name="yt_src" value="<?PHP if ($youtube_src != ""){echo $youtube_src;}?>">
+	<span class="help-block hints">Youtube source = "aHjpOzsQ9YI", this means that youtube music being enabled with that variable as the source will have the following music video play in the background <a href ="http://www.youtube.com/watch?v=aHjpOzsQ9YI">Example</a></span>
+  </div>
+  <div class="form-group">
+        <label>
+		Redirect Source status:
+        <select class="form-control" id="rp_status" name="rp_status">
+		<option value="enabled" <?PHP if ($redirect_enabled == 1){echo "selected";}?>>Enabled</option>
+		<option value="disabled" <?PHP if ($redirect_enabled == 0){echo "selected";}?>>Disabled</option>
+		</select>
+      </label>
+	  </br>
+    <label for="redirectSource">Redirect Source Link:</label>
+    <input type="text" class="form-control" id="redirectSource" name="rp_src" placeholder="Redirect Source Link" value="<?PHP if ($redirect_src != ""){echo $redirect_src;}?>">
+	<span class="help-block hints">If your redirect source is enabled (via the above checkbox) it will overwrite the YouTube music.</span>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+      </div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+  </body>
 </html>
