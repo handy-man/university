@@ -51,10 +51,10 @@ if ($_SESSION['steamid'] == ""){
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<?PHP echo $home . "account"; ?>">Home</a></li>
+            <li><a href="<?PHP echo $home . "account"; ?>">Home</a></li>
             <li><a href="<?PHP echo $home . "index.php?steamid=" . $communityid . ""; ?>">Preview</a></li>
             <li><a href="<?PHP echo $forum_url;?>">Community Forums</a></li>
-            <li><a href="help.php">help</a></li>
+            <li class="active"><a href="help.php">help</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
