@@ -4,7 +4,6 @@
 
 	//Community ID
 	$communityid = $_GET["steamid"];
-	#$communityid = $communityid = $mysqli->real_escape_string($communityid);
 	//Connect to our database
 	$connect = mysqli_connect($host,$user,$pass,$dbname);
 	//Get our users redirect url

@@ -3,16 +3,16 @@
 	//$host == Hostname, the ip address/website name of your SQL server.
 	include("dbconfig.php");
 	//Your steamAPI key, this is required and can be applied for here: http://steamcommunity.com/dev
-	$steam_api = "CA269D3FE157CBEA7386C9830FCC218D";
+	$steam_api = "";
 	
 	//Plese insert the home directory for this personal Loading screen installation.
-	$home = "http://www.thehiddennation.com/personalLoad/";
+	$home = "";
 	
 	//Please insert your base website address.
-	$website = "www.thehiddennation.com";
+	$website = "";
 	
 	//Please insert your community forum url, this is seen as a link in the account page.
-	$forum_url = "http://www.thehiddennation.com/forums/";
+	$forum_url = "";
 	
 	session_start();
 ?>
