@@ -63,7 +63,8 @@ if ($_SESSION['steamid'] == ""){
     <div class="container">
 
       <div class="starter-template">
-
+		<h1>PersonalLoad - Help</h1>
+		<p class="lead">When setting a YouTube Source you should use the charecters found after the v= in the youtube link.<br> Example of a typical youtube link: "www.youtube.com/watch?v=aHjpOzsQ9YI"<br>Example of what we want to take from that link: "aHjpOzsQ9YI"</br> Take the above text and insert that into the YouTube Source on the home page.<br><br>Redirect will always take over any music, if you have a reditect set you will always be redirected.<br>Remember to include the http:// in your redirect link, else it will not work.</p>
       </div><!-- /.starter template -->
 
     </div><!-- /.container -->
