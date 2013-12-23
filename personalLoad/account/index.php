@@ -65,7 +65,7 @@ if ($_SESSION['steamid'] == ""){
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a href="<?PHP echo $home . "index.php?steamid=" . $communityid . ""; ?>">Preview</a></li>
-            <li><a href="http://www.thehiddennation.com">Community Forums</a></li>
+            <li><a href="<?PHP echo $forum_url;?>">Community Forums</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
