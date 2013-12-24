@@ -117,7 +117,7 @@ if ($_SESSION['steamid'] == ""){
 	  </br>
     <label for="redirectSource">Redirect Source Link:</label>
     <input type="text" class="form-control" id="redirectSource" name="rp_src" placeholder="Example http://www.garryspin.com" value="<?PHP if ($redirect_src != ""){echo $redirect_src;}?>">
-	<span class="help-block hints">If your redirect source is enabled (via the above checkbox) it will overwrite the YouTube music.</span>
+	<span class="help-block hints">If your redirect source is enabled it will overwrite the YouTube music, and you will be redirected.</span>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
