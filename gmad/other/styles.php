@@ -14,7 +14,6 @@ body
 	<?PHP
 	if ($bgimg_enabled == true){
 	echo "background-image: url('" . $bgimg_src . "');";
-	echo "background-repeat: repeat;";
 	}
 	else{
 	
@@ -75,7 +74,7 @@ background-image: linear-gradient(to bottom, <?php echo $header_top_gradient;?> 
 div#site_title
 {
 	color: <?php echo $text_colour;?>;
-	text-transform: uppercase;
+	text-transform: ;
 	text-align: center;
 	
 	background-color:rgba(<?PHP echo $title_red . ", " . $title_green . ", " . $title_blue; if ($opaque_enabled == true) {echo ", 0.85";} else { echo ", 1";}?>);

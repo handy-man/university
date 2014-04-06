@@ -1,6 +1,6 @@
 <?php
 	//The title, usually your web address but can just be something like "The fancy pants community"
-	$title_text = "GmadGaming.net [Modified-DarkRP]";
+	$title_text = "Welcome to GmadGaming.net [Modified] DarkRP";
 	//Use custom font type, lots of different custom fonts can be found here: http://www.dafont.com/
 	$custom_font = false;
 	//Custom font source (if we're using a custom font type, we need the source of that fonts location) example : http://www.yourwebsitehere.com/loading/myfont.ttf
@@ -10,11 +10,10 @@
 	$steam_api = "F4EF52C2AC3B2C5C7F654BCF0063A38C";
 	
 	//Custom serverip, the serverip address comes from Steam data. If a user's profile is set to private/friends only this field will be blank, so set a custom one.
-	$custom_serverip = false;
+	$custom_serverip = true;
 	
-
 	//This is useful for when you want user's to check for a dns (exmaple: ttt.sngaming.org) for your server, or they have a private profile.
-	$serverip_text = "";
+	$serverip_text = "69.162.87.231:27015";
 	
 	//The largest visible background colour by default: #2C3539 
 	//Will not function/ be used if $bgimg_enabled = true, if your background isn't this colour set $bgimg_enabled to false. 
@@ -37,16 +36,24 @@
 	$drop_colour = "#1589FF";
 	
 	//Community name in welcome message
-	$com_name = "GmadGaming.net";
+	$com_name = "Gmad Gaming";
 	
 	//Welcome message text. (LEAVE BLANK IF NOT REQUIRED)
-	$welcome_message_1 = "";
+	$welcome_message_1 = "Be sure to take a quick look at the rules above and read the rules in-game.";
 	
 	//Welcome message text for a second paragraph with 5px distance between the first paragraph and the second. (LEAVE BLANK IF NOT REQUIRED)
-	$welcome_message_2 = "";
+	$welcome_message_2 = "Signup on our forums at GmadGaming.net";
 	
-	//Welcome message text for a third paragraph with 5px distance between the first paragraph and the second. (LEAVE BLANK IF NOT REQUIRED)
-	$welcome_message_3 = "";
+	//Welcome message text for a third paragraph with 5.px distance between the first paragraph and the second. (LEAVE BLANK IF NOT REQUIRED)
+	$welcome_message_3 = "We are currently <u><b>accepting</b></u> Staff Applications on our forums at GmadGaming.net";
+    
+    $welcome_message_4 = "Our Community owner <b>Nascar</b>.";
+    
+    $welcome_message_6 = "Server Developer: <b>Handy_man</b>";
+    
+    $welcome_message_7 = "HeadAdmin: <b>------</b>";
+    
+    $welcome_message_8 = "Make suggestions on the forums at GmadGaming.net";
 	
 	//NEW SINCE 1.1
 	//This is the true/false boolean for if you want the information such as serverip, gamemode etc to line up with the results as seen here: http://www.thehiddennation.com/coderhire-example4.png set to true, else false.

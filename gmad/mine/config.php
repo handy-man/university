@@ -10,11 +10,10 @@
 	$steam_api = "F4EF52C2AC3B2C5C7F654BCF0063A38C";
 	
 	//Custom serverip, the serverip address comes from Steam data. If a user's profile is set to private/friends only this field will be blank, so set a custom one.
-	$custom_serverip = false;
+	$custom_serverip = true;
 	
-
 	//This is useful for when you want user's to check for a dns (exmaple: ttt.sngaming.org) for your server, or they have a private profile.
-	$serverip_text = "";
+	$serverip_text = "69.162.87.231:27015";
 	
 	//The largest visible background colour by default: #2C3539 
 	//Will not function/ be used if $bgimg_enabled = true, if your background isn't this colour set $bgimg_enabled to false. 

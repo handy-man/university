@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
-		<title>Dynamic Loadingurl</title>
+		<title>GmadGaming.net 1942 Loading</title>
 		<link href="styles.php" media="screen" rel="stylesheet" type="text/css" />
 		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	</head>
@@ -35,27 +35,6 @@
 	$myarray = json_decode($link, true);
 ?>
 <body>
-
-	<audio id="bg" loop>
-					<source src="<?PHP echo $wav_src; ?>" type="audio/x-wav">
-					Your browser does not support the HTML5 audio tag
-	</audio>
-	<?PHP
-	if ($wav_enabled == true){
-		echo "<script type='text/javascript'>";
-		echo "bg.play();";
-		echo "</script>";
-	}
-	
-	if ($youtube_enabled == true){
-		echo "<object type='hidden' style='height: 0; width: 0'>
-			<param name='movie' value='http://www.youtube.com/v/" . $youtube_src . "_3kKxyf6b-U?version=3&autoplay=1&loop=1'>
-			<param name='allowFullScreen' value='true'><param name='allowScriptAccess' value='always'><embed src='http://www.youtube.com/v/" . $youtube_src . "?version=3&autoplay=1&loop=1' type='application/x-shockwave-flash' allowfullscreen='true' allowScriptAccess='always' width='1' height='1'>
-		</object>";
-	}
-	
-	?>
-
 	<div id="header"></div>
 	<div id="site_title">
 		<span><?php echo $title_text;?></span>
@@ -63,10 +42,10 @@
 	<div id="page">
 		<div id="dynamic_content">
 			<span class="in_title">Server name:</span>
-			<span class="in_content_sn"></span>
+			<span class="welcome">GmadGaming.net Semi-Serious DarkRP [Staff Needed]</span>
 			<span class="in_title">Gamemode:</span>
-			<span class="in_content_gm"></span>
-			<span class="in_title">server ip:</span>
+			<span class="welcome">DarkRP</span>
+			<span class="in_title">Server IP:</span>
 			<span class="in_content"><?php
 				if ($custom_serverip == false){
 			print $myarray['response']['players'][0]['gameserverip'];
@@ -80,56 +59,98 @@
 		</div>
 		<div id="primary_content">
 			<span class="rules_title">Rules</span>
-<table>
-					<tbody><tr>
+				<table>
+					<tr>
 						<td>
 							<ul>
 								<li>
-								No Hacking
+								Obey Staff orders.
 								</li>
 								
 								<li>
-								No Racism or Hate speech
+								No bullying unless properly RPed out.
 								</li>
 
 								<li>
-								No RDMing
+								Do not kill yourself to avoid an RP situation (FailRP) unless properly RPed out.
 								</li>
 
 								<li>
-								No Trolling
+								NLR is 90 seconds (Around 1.5 minutes)
 								</li>
 
 								<li>
-								Listen to the Admins
+								Do not abuse any exploits, glitches or use hacks. (Report such offenses to a Staff member)
 								</li> 
+								
+								<li>
+								KoS Lines/Areas are not permitted.
+								</li>
+								
+								<li>
+								20% is not considered a high tax rate.
+								</li>
+<!--
+								<li>
+								Resistance members must have a valid reason to raid the ReichStag
+								</li>
+
+								<li>
+								Ask the Fuhrer for changes before attempting to kill him.
+								</li>
+
+								<li>
+								FailRP is a valid demotion reason! (See rules for details)
+								</li> 
+-->
 							</ul>
 						</td>
 						<td>
 							<ul>
 								<li>
-								No Mic/Chat spamming
+								MetaGaming is not permitted.
 								</li>
 								
 								<li>
-								No advertising
+								Prop abuse is not tolerated. (See rules for details)
 								</li>
 
 								<li>
-								No NSFW Sprays
+								Gov. Officials cannot be "corrupt".
 								</li>
 
 								<li>
-								Read the MOTD
+								Gov. Officials must have a warrant before entering any property owned by citizens.
 								</li>
 
 								<li>
-								Have Fun!
+								Gestapo agents must have a valid reason to infiltrate bases.
 								</li> 
+								
+								<li>
+								Any law that makes an area KoS is not permitted.
+								</li>
+<!--
+								<li>
+								You cannot kill a player to teleport them to jail.
+								</li>
+
+								<li>
+								Only Cops are permitted to handle bail unless ordered otherwise by a Superior.
+								</li>
+
+								<li>
+								The Mayor is not permitted to have any weapon.
+								</li>
+
+								<li>
+								Do not propblock radios so they cannot be turned off.
+								</li>
+-->
 							</ul>
 						</td>
 					</tr>
-				</tbody></table>
+				</table>
 		</div>
 			<div id="status_content">
 				<span class="in_status"></span>
@@ -162,7 +183,56 @@
 					}
 					?>
 				</span>
+                <span class="welcome">
+					<?PHP
+					if ($welcome_message_4 != ""){
+					echo $welcome_message_4;
+					}
+					?>
+				</span>
+                <span class="welcome">
+					<?PHP
+					if ($welcome_message_6 != ""){
+					echo $welcome_message_6;
+					}
+					?>
+				</span>
+                <span class="welcome">
+                    <?PHP
+                    if ($welcome_message_7 != ""){
+                    echo $welcome_message_7;
+                    }
+                    ?>
+                </span>
+                <span class="welcome">
+					<?PHP
+					if ($welcome_message_8 != ""){
+					echo $welcome_message_8;
+					}
+					?>
+				</span>
 			</div>
 	</div>
+    
+	<audio id="bg" loop>
+					<source src="<?PHP echo $wav_src; ?>" type="audio/x-wav">
+					Your browser does not support the HTML5 audio tag
+	</audio>
+	<?PHP
+	if ($wav_enabled == true){
+		echo "<script type='text/javascript'>";
+		echo "bg.play();";
+		echo "</script>";
+	}
+	
+	if ($youtube_enabled == true){
+		echo "<object type='hidden' style='height: 0; width: 0'>
+			<param name='movie' value='http://www.youtube.com/v/" . $youtube_src . "_3kKxyf6b-U?version=3&autoplay=1&loop=1'>
+			<param name='allowFullScreen' value='true'><param name='allowScriptAccess' value='always'><embed src='http://www.youtube.com/v/" . $youtube_src . "?version=3&autoplay=1&loop=1' type='application/x-shockwave-flash' allowfullscreen='true' allowScriptAccess='always' width='1' height='1'>
+		</object>";
+	}
+	
+	?>
+    
 </body>
 </html>
