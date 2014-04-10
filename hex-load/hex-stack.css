@@ -1,0 +1,100 @@
+.hex {
+    float: left;
+    margin-right: -26px;
+    margin-bottom: -50px;
+	z-index: -100;
+}
+.hex .left {
+    float: left;
+    width: 0;
+    border-right: 30px solid #6C6;
+    border-top: 52px solid transparent;
+    border-bottom: 52px solid transparent;
+		-webkit-animation:hex-anim-left 5s infinite; /* Chrome, Safari, Opera */
+animation:hex-anim-left 5s infinite;
+}
+.hex .middle {
+    float: left;
+    width: 60px;
+    height: 104px;
+    background: #6C6;
+	-webkit-animation:hex-anim 5s infinite; /* Chrome, Safari, Opera */
+animation:hex-anim 5s infinite;
+
+}
+.hex .right {
+    float: left;
+    width: 0;
+    border-left: 30px solid #6C6;
+    border-top: 52px solid transparent;
+    border-bottom: 52px solid transparent;
+	-webkit-animation:hex-anim-right 5s infinite; /* Chrome, Safari, Opera */
+animation:hex-anim-right 5s infinite;
+}
+.hex-row {
+    clear: left;
+}
+.hex.even {
+    margin-top: 53px;
+	
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hex-anim
+{
+0%   {background:#6C6;}
+25%  {background:yellow;}
+50%  {background:blue;}
+75%  {background:green;}
+100% {background:red;}
+}
+
+/* Standard syntax */
+@keyframes hex-anim
+{
+0%   {background:#6C6;}
+25%  {background:yellow;}
+50%  {background:blue;}
+75%  {background:green;}
+100% {background:red;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hex-anim-right
+{
+0%   {border-left: 30px solid #6C6;}
+25%  {border-left: 30px solid yellow;}
+50%  {border-left: 30px solid blue;}
+75%  {border-left: 30px solid green;}
+100% {border-left: 30px solid red;}
+}
+
+/* Standard syntax */
+@keyframes hex-anim-right
+{
+0%   {border-left: 30px solid #6C6;}
+25%  {border-left: 30px solid yellow;}
+50%  {border-left: 30px solid blue;}
+75%  {border-left: 30px solid green;}
+100% {border-left: 30px solid red;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes hex-anim-left
+{
+0%   {border-right: 30px solid #6C6;}
+25%  {border-right: 30px solid yellow;}
+50%  {border-right: 30px solid blue;}
+75%  {border-right: 30px solid green;}
+100% {border-right: 30px solid red;}
+}
+
+/* Standard syntax */
+@keyframes hex-anim-left
+{
+0%   {border-right: 30px solid #6C6;}
+25%  {border-right: 30px solid yellow;}
+50%  {border-right: 30px solid blue;}
+75%  {border-right: 30px solid green;}
+100% {border-right: 30px solid red;}
+}
